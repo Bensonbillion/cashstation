@@ -1734,3 +1734,89 @@ a.footer-contact-item:hover {
     text-align: left;
   }
 }
+
+/* =========================================
+   Floating WhatsApp Button
+   ========================================= */
+
+#whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+#whatsapp-float.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#whatsapp-float.dimmed {
+  opacity: 0.4;
+}
+
+.whatsapp-float-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #25D366;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.whatsapp-float-link:hover {
+  background-color: #22c55e;
+  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.4);
+  transform: translateY(-2px);
+}
+
+.whatsapp-float-link svg {
+  flex-shrink: 0;
+}
+
+.whatsapp-float-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .whatsapp-float-label {
+    display: none;
+  }
+
+  .whatsapp-float-link {
+    padding: 14px;
+    border-radius: 50%;
+  }
+}
+
+/* =========================================
+   Accessibility: Focus-visible outlines
+   ========================================= */
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.faq-question:focus-visible {
+  outline-offset: -2px;
+}
+
+#submit-btn:focus-visible {
+  outline-offset: 2px;
+}
+
+.custom-checkbox input[type="checkbox"]:focus-visible ~ .checkmark {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}

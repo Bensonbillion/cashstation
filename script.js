@@ -7,20 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Nav scroll behavior ---
   const nav = document.getElementById('nav');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  });
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  }
 
   // --- Hero particles ---
   if (typeof tsParticles !== 'undefined') {
     tsParticles.load('tsparticles', {
       fullScreen: { enable: false },
       particles: {
-        number: { value: 40 },
+        number: { value: window.innerWidth < 768 ? 25 : 40 },
         color: { value: '#C4A265' },
         shape: { type: 'circle' },
         size: { value: { min: 1, max: 3 } },
@@ -155,7 +157,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- WhatsApp button ---
-  // TODO: Floating WhatsApp button visibility and link behavior
+  const whatsappFloat = document.getElementById('whatsapp-float');
+
+  if (whatsappFloat) {
+    setTimeout(() => {
+      whatsappFloat.classList.add('visible');
+    }, 1500);
+
+    const bookSection = document.getElementById('book');
+    if (bookSection) {
+      window.addEventListener('scroll', () => {
+        const bookRect = bookSection.getBoundingClientRect();
+        if (bookRect.top < window.innerHeight && bookRect.bottom > 0) {
+          whatsappFloat.classList.add('dimmed');
+        } else {
+          whatsappFloat.classList.remove('dimmed');
+        }
+      });
+    }
+  }
 
   // --- FAQ accordion ---
   const faqButtons = document.querySelectorAll('.faq-question');
