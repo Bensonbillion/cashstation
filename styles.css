@@ -826,3 +826,82 @@ body {
     padding: 48px 40px;
   }
 }
+
+/* =========================================
+   Why Us (Trust Section)
+   ========================================= */
+
+#why-us {
+  background-color: #0F0F0F;
+  padding: 72px 20px;
+}
+
+.why-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.why-header {
+  text-align: center;
+}
+
+.why-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 48px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.why-item {
+  /* No background, no border, no box — open and breathable */
+}
+
+.why-icon-wrap {
+  width: 48px;
+  height: 48px;
+  background: rgba(196, 162, 101, 0.08);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.why-item-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.why-item-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  #why-us {
+    padding: 100px 24px;
+  }
+
+  .why-heading {
+    font-size: 38px;
+    margin-bottom: 64px;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 64px;
+  }
+}
