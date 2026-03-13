@@ -43,7 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- Fade-in observer ---
-  // TODO: IntersectionObserver for fade-in-up animations on section headings
+  const fadeEls = document.querySelectorAll('.fade-in-up');
+  const fadeObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  fadeEls.forEach(el => fadeObserver.observe(el));
 
   // --- Confetti trigger ---
   // TODO: Fire gold & black confetti burst on inquiry form submission

@@ -312,3 +312,190 @@ body {
     font-size: 18px;
   }
 }
+
+/* =========================================
+   Shared: Fade-in on scroll
+   ========================================= */
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   Shared: Section divider
+   ========================================= */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* =========================================
+   Shared: Eyebrow label
+   ========================================= */
+
+.eyebrow {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* =========================================
+   What Is Money Spraying
+   ========================================= */
+
+#what-is {
+  padding: 72px 20px;
+}
+
+.what-is-container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.what-is-text {
+  text-align: center;
+}
+
+.what-is-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+.what-is-body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.what-is-body + .what-is-body {
+  margin-top: 16px;
+}
+
+.community-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+  justify-content: center;
+}
+
+.community-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--color-gold);
+  border: 1px solid rgba(196, 162, 101, 0.3);
+  border-radius: 20px;
+  padding: 4px 12px;
+}
+
+/* Visual placeholder card */
+.what-is-visual {
+  width: 100%;
+  max-width: 280px;
+}
+
+.what-is-visual-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #111111, #1a1a1a);
+  border: 1px solid rgba(196, 162, 101, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.what-is-note-icon {
+  animation: notePulse 3s ease-in-out infinite;
+}
+
+@keyframes notePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+.what-is-visual-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  opacity: 0.6;
+}
+
+.sparkle {
+  position: absolute;
+}
+
+.sparkle-1 { top: 12%; left: 15%; opacity: 0.4; }
+.sparkle-2 { top: 22%; right: 18%; opacity: 0.3; }
+.sparkle-3 { bottom: 25%; left: 10%; opacity: 0.5; }
+.sparkle-4 { bottom: 15%; right: 14%; opacity: 0.35; }
+.sparkle-5 { top: 40%; right: 10%; opacity: 0.6; }
+
+/* Desktop: two columns, text left, visual right */
+@media (min-width: 768px) {
+  #what-is {
+    padding: 100px 24px;
+  }
+
+  .what-is-container {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .what-is-text {
+    text-align: left;
+    flex: 1;
+  }
+
+  .what-is-heading {
+    font-size: 38px;
+  }
+
+  .what-is-body {
+    font-size: 16px;
+  }
+
+  .community-tags {
+    justify-content: flex-start;
+  }
+
+  .what-is-visual {
+    max-width: none;
+    flex: 0 0 280px;
+  }
+
+  .what-is-text.fade-in-up {
+    transition-delay: 0s;
+  }
+
+  .what-is-visual.fade-in-up {
+    transition-delay: 0.15s;
+  }
+}
