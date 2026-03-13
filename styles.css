@@ -3,16 +3,36 @@
    ========================================= */
 
 :root {
-  --color-bg: #0A0A0A;
-  --color-bg-2: #111111;
-  --color-bg-3: #F9F6F0;
-  --color-gold: #FFD700;
-  --color-gold-deep: #C4A265;
-  --color-gold-cta: #FFD700;
-  --color-text: #F0EDE6;
-  --color-text-muted: #9A9A8A;
-  --color-text-dark: #1A1A1A;
-  --color-text-dark-muted: #666666;
+  /* Backgrounds */
+  --bg-primary: #0D0D0D;
+  --bg-secondary: #141414;
+  --bg-light: #FAFAF7;
+  --bg-card-dark: #1A1A1A;
+  --bg-card-light: #FFFFFF;
+
+  /* Gold system — electric, not muted */
+  --gold-bright: #FFD700;
+  --gold-mid: #E6B800;
+  --gold-deep: #C4A265;
+  --gold-subtle: rgba(255, 215, 0, 0.12);
+  --gold-glow: rgba(255, 215, 0, 0.25);
+  --gold-border: rgba(255, 215, 0, 0.2);
+
+  /* Text */
+  --text-primary: #F5F2EC;
+  --text-muted: #888880;
+  --text-dark: #1A1A1A;
+  --text-dark-muted: #5A5A5A;
+
+  /* Functional */
+  --border-dark: rgba(255, 215, 0, 0.15);
+  --border-light: rgba(0, 0, 0, 0.08);
+  --shadow-gold: 0 0 40px rgba(255, 215, 0, 0.15);
+  --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.4);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition: all 0.25s ease;
 }
 
 *,
@@ -29,8 +49,8 @@ html {
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
 }
 
 /* =========================================
@@ -41,7 +61,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: rgba(10, 10, 10, 0.85);
+  background-color: rgba(13, 13, 13, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 215, 0, 0.2);
@@ -76,7 +96,7 @@ body {
   font-weight: 500;
   font-size: 12px;
   letter-spacing: 0.15em;
-  color: var(--color-gold);
+  color: var(--gold-bright);
 }
 
 .nav-cta {
@@ -84,8 +104,8 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 14px;
-  color: var(--color-bg);
-  background-color: var(--color-gold-cta);
+  color: var(--bg-primary);
+  background-color: var(--gold-bright);
   padding: 8px 18px;
   border: none;
   border-radius: 4px;
@@ -128,7 +148,7 @@ body {
   gap: 32px;
   align-items: center;
   padding: 120px 24px 80px;
-  background: radial-gradient(ellipse 80% 60% at 30% 50%, rgba(255,215,0,0.04) 0%, transparent 60%), var(--color-bg);
+  background: radial-gradient(ellipse 80% 60% at 30% 50%, rgba(255,215,0,0.04) 0%, transparent 60%), var(--bg-primary);
   background-size: 200% 200%;
   animation: heroGlow 8s ease infinite;
   overflow: hidden;
@@ -165,7 +185,7 @@ body {
 .hero-label-line {
   width: 40px;
   height: 2px;
-  background-color: var(--color-gold);
+  background-color: var(--gold-bright);
   margin-bottom: 8px;
 }
 
@@ -173,7 +193,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 0.2em;
-  color: var(--color-gold);
+  color: var(--gold-bright);
   text-transform: uppercase;
 }
 
@@ -182,7 +202,7 @@ body {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.15;
-  color: var(--color-text);
+  color: var(--text-primary);
   margin-top: 24px;
 }
 
@@ -204,7 +224,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   max-width: 480px;
   margin-top: 20px;
   line-height: 1.6;
@@ -223,8 +243,8 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 15px;
-  color: var(--color-bg);
-  background-color: var(--color-gold-cta);
+  color: var(--bg-primary);
+  background-color: var(--gold-bright);
   padding: 14px 32px;
   border: none;
   border-radius: 4px;
@@ -266,9 +286,9 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 15px;
-  color: var(--color-gold);
+  color: var(--gold-bright);
   background: transparent;
-  border: 1.5px solid var(--color-gold);
+  border: 1.5px solid var(--gold-bright);
   padding: 14px 32px;
   border-radius: 4px;
   text-decoration: none;
@@ -288,7 +308,7 @@ body {
 .hero-trust {
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   margin-top: 20px;
 }
 
@@ -351,7 +371,7 @@ body {
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 0.15em;
-  color: var(--color-gold);
+  color: var(--gold-bright);
 }
 
 .machine-screen {
@@ -477,7 +497,7 @@ body {
 .hero-photo-strip-label {
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
 }
 
 .hero-scroll-indicator {
@@ -493,8 +513,8 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  border-right: 2px solid var(--color-gold);
-  border-bottom: 2px solid var(--color-gold);
+  border-right: 2px solid var(--gold-bright);
+  border-bottom: 2px solid var(--gold-bright);
   transform: rotate(45deg);
   opacity: 0.5;
   animation: chevronBounce 1.5s ease-in-out infinite;
@@ -587,7 +607,7 @@ body {
 
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--gold-bright), transparent);
 }
 
 /* =========================================
@@ -599,7 +619,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 0.2em;
-  color: var(--color-gold);
+  color: var(--gold-bright);
   text-transform: uppercase;
   margin-bottom: 16px;
 }
@@ -609,23 +629,21 @@ body {
   display: block;
   width: 40px;
   height: 2px;
-  background-color: var(--color-gold);
+  background-color: var(--gold-bright);
   margin: 12px auto 0;
 }
 
 /* Light section eyebrow overrides */
 #what-is .eyebrow,
 #experiences .eyebrow,
-#social-proof .eyebrow,
 #faq .eyebrow {
-  color: var(--color-gold-deep);
+  color: var(--gold-deep);
 }
 
 #what-is .eyebrow::after,
 #experiences .eyebrow::after,
-#social-proof .eyebrow::after,
 #faq .eyebrow::after {
-  background-color: var(--color-gold-deep);
+  background-color: var(--gold-deep);
 }
 
 /* =========================================
@@ -633,7 +651,7 @@ body {
    ========================================= */
 
 #what-is {
-  background-color: var(--color-bg-3);
+  background-color: var(--bg-light);
   padding: 72px 20px;
 }
 
@@ -655,7 +673,7 @@ body {
   font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
-  color: var(--color-text-dark);
+  color: var(--text-dark);
   margin-bottom: 24px;
 }
 
@@ -663,7 +681,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
   font-weight: 400;
-  color: var(--color-text-dark-muted);
+  color: var(--text-dark-muted);
   line-height: 1.75;
 }
 
@@ -738,7 +756,7 @@ body {
    ========================================= */
 
 #how-it-works {
-  background-color: var(--color-bg-2);
+  background-color: var(--bg-secondary);
   padding: 72px 20px;
 }
 
@@ -756,7 +774,7 @@ body {
   font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
-  color: var(--color-text);
+  color: var(--text-primary);
   max-width: 560px;
   margin: 0 auto 48px;
 }
@@ -790,14 +808,14 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 18px;
-  color: var(--color-text);
+  color: var(--text-primary);
   margin-bottom: 12px;
 }
 
 .hiw-step-desc {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -809,7 +827,7 @@ body {
 .hiw-bottom-text {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   margin-bottom: 20px;
 }
 
@@ -836,8 +854,8 @@ body {
     right: -20px;
     width: 10px;
     height: 10px;
-    border-right: 2px solid var(--color-gold);
-    border-bottom: 2px solid var(--color-gold);
+    border-right: 2px solid var(--gold-bright);
+    border-bottom: 2px solid var(--gold-bright);
     transform: rotate(-45deg);
     opacity: 0.25;
   }
@@ -852,7 +870,7 @@ body {
    ========================================= */
 
 #experiences {
-  background-color: var(--color-bg-3);
+  background-color: var(--bg-light);
   padding: 72px 20px;
 }
 
@@ -870,14 +888,14 @@ body {
   font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
-  color: var(--color-text-dark);
+  color: var(--text-dark);
   margin-bottom: 16px;
 }
 
 .exp-sub {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  color: var(--color-text-dark-muted);
+  color: var(--text-dark-muted);
   margin-bottom: 48px;
 }
 
@@ -935,8 +953,8 @@ body {
   position: absolute;
   top: -1px;
   right: 24px;
-  background-color: var(--color-gold-cta);
-  color: var(--color-bg);
+  background-color: var(--gold-bright);
+  color: var(--bg-primary);
   font-family: 'DM Sans', sans-serif;
   font-size: 10px;
   font-weight: 500;
@@ -950,14 +968,14 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   font-size: 26px;
-  color: var(--color-text-dark);
+  color: var(--text-dark);
   margin-bottom: 12px;
 }
 
 .exp-card-tagline {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-gold-deep);
+  color: var(--gold-deep);
   font-style: italic;
   margin-bottom: 20px;
 }
@@ -965,7 +983,7 @@ body {
 .exp-card-desc {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-text-dark-muted);
+  color: var(--text-dark-muted);
   line-height: 1.7;
   margin-bottom: 28px;
 }
@@ -982,7 +1000,7 @@ body {
 .exp-card-features li {
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  color: var(--color-text-dark);
+  color: var(--text-dark);
   padding-left: 22px;
   position: relative;
 }
@@ -991,7 +1009,7 @@ body {
   content: '\2726';
   position: absolute;
   left: 0;
-  color: var(--color-gold-deep);
+  color: var(--gold-deep);
 }
 
 /* Card CTAs */
@@ -1012,8 +1030,8 @@ body {
 }
 
 .exp-card-cta--primary {
-  background-color: var(--color-gold-cta);
-  color: var(--color-bg);
+  background-color: var(--gold-bright);
+  color: var(--bg-primary);
   border: none;
 }
 
@@ -1041,12 +1059,12 @@ body {
 
 .exp-card-cta--secondary {
   background: transparent;
-  color: var(--color-gold-deep);
-  border: 1.5px solid var(--color-gold-deep);
+  color: var(--gold-deep);
+  border: 1.5px solid var(--gold-deep);
 }
 
 .exp-card-cta--secondary:hover {
-  background-color: rgba(196, 162, 101, 0.08);
+  background-color: rgba(255, 215, 0, 0.08);
 }
 
 /* Bottom note */
@@ -1054,12 +1072,12 @@ body {
   text-align: center;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  color: var(--color-text-dark-muted);
+  color: var(--text-dark-muted);
   margin-top: 32px;
 }
 
 .exp-ask-link {
-  color: var(--color-gold-deep);
+  color: var(--gold-deep);
   text-decoration: none;
 }
 
@@ -1094,7 +1112,7 @@ body {
    ========================================= */
 
 #why-us {
-  background-color: var(--color-bg);
+  background-color: var(--bg-primary);
   padding: 72px 20px;
 }
 
@@ -1112,7 +1130,7 @@ body {
   font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
-  color: var(--color-text);
+  color: var(--text-primary);
   margin-bottom: 48px;
 }
 
@@ -1137,14 +1155,14 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 17px;
-  color: var(--color-text);
+  color: var(--text-primary);
   margin-bottom: 10px;
 }
 
 .why-item-desc {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -1165,11 +1183,11 @@ body {
 }
 
 /* =========================================
-   Social Proof — LIGHT SECTION
+   Social Proof — DARK SECTION
    ========================================= */
 
 #social-proof {
-  background-color: var(--color-bg-3);
+  background-color: var(--bg-secondary);
   padding: 72px 20px;
 }
 
@@ -1215,7 +1233,7 @@ body {
   font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
-  color: var(--color-text-dark);
+  color: var(--text-primary);
   margin-bottom: 48px;
 }
 
@@ -1226,17 +1244,17 @@ body {
 }
 
 .testimonial-card {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: var(--bg-card-dark);
+  border: 1px solid var(--border-dark);
   border-radius: 12px;
   padding: 28px 24px;
   position: relative;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
 .testimonial-quote-mark {
@@ -1244,13 +1262,13 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 64px;
   line-height: 1;
-  color: var(--color-gold-deep);
+  color: var(--gold-deep);
   opacity: 0.4;
   margin-bottom: 4px;
 }
 
 .testimonial-stars {
-  color: var(--color-gold-cta);
+  color: var(--gold-bright);
   font-size: 14px;
   margin-bottom: 16px;
 }
@@ -1258,7 +1276,7 @@ body {
 .testimonial-text {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-text-dark-muted);
+  color: var(--text-muted);
   line-height: 1.75;
   font-style: italic;
   margin-bottom: 24px;
@@ -1274,15 +1292,15 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(196, 162, 101, 0.3), rgba(196, 162, 101, 0.1));
-  border: 1px solid rgba(196, 162, 101, 0.3);
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1));
+  border: 1px solid rgba(255, 215, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: var(--color-gold-deep);
+  color: var(--gold-deep);
   flex-shrink: 0;
 }
 
@@ -1291,14 +1309,14 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: var(--color-text-dark);
+  color: var(--text-primary);
 }
 
 .testimonial-event {
   display: block;
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
-  color: #999999;
+  color: var(--text-muted);
   margin-top: 2px;
 }
 
@@ -1320,7 +1338,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   font-size: 36px;
-  color: var(--color-gold-cta);
+  color: var(--gold-bright);
 }
 
 .sp-stat-label {
@@ -1328,7 +1346,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
   letter-spacing: 0.1em;
-  color: var(--color-text-dark);
+  color: var(--text-muted);
   text-transform: uppercase;
   margin-top: 4px;
 }
@@ -1379,7 +1397,7 @@ body {
     display: block;
     width: 1px;
     height: 40px;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 215, 0, 0.15);
   }
 }
 
@@ -1388,7 +1406,7 @@ body {
    ========================================= */
 
 #book {
-  background: linear-gradient(180deg, var(--color-bg-2) 0%, var(--color-bg) 100%);
+  background-color: var(--bg-primary);
   padding: 72px 20px;
 }
 
@@ -1406,14 +1424,14 @@ body {
   font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
-  color: var(--color-text);
+  color: var(--text-primary);
   margin-bottom: 12px;
 }
 
 .book-sub {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   margin-bottom: 48px;
 }
 
@@ -1428,7 +1446,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--text-primary);
   letter-spacing: 0.04em;
   margin-bottom: 8px;
 }
@@ -1438,13 +1456,13 @@ body {
 .form-field input[type="date"],
 .form-field select {
   width: 100%;
-  background-color: var(--color-bg-2);
+  background-color: var(--bg-secondary);
   border: 1px solid rgba(255, 215, 0, 0.2);
   border-radius: 8px;
   padding: 14px 16px;
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-text);
+  color: var(--text-primary);
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
   -webkit-appearance: none;
@@ -1452,12 +1470,12 @@ body {
 }
 
 .form-field input::placeholder {
-  color: var(--color-text-muted);
+  color: var(--text-muted);
 }
 
 .form-field input:focus,
 .form-field select:focus {
-  border-color: var(--color-gold);
+  border-color: var(--gold-bright);
   box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.08);
 }
 
@@ -1478,7 +1496,7 @@ body {
   display: block;
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   margin-top: 6px;
 }
 
@@ -1491,8 +1509,8 @@ body {
 }
 
 .form-field select option {
-  color: var(--color-text);
-  background-color: var(--color-bg-2);
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
 }
 
 /* Custom checkboxes */
@@ -1536,14 +1554,14 @@ body {
   display: none;
   width: 5px;
   height: 10px;
-  border: solid var(--color-gold-cta);
+  border: solid var(--gold-bright);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
   margin-bottom: 2px;
 }
 
 .custom-checkbox input[type="checkbox"]:checked ~ .checkmark {
-  border-color: var(--color-gold-cta);
+  border-color: var(--gold-bright);
   background: rgba(255, 215, 0, 0.15);
 }
 
@@ -1554,15 +1572,15 @@ body {
 .checkbox-label-text {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   line-height: 1.5;
 }
 
 /* Submit button */
 #submit-btn {
   width: 100%;
-  background-color: var(--color-gold-cta);
-  color: var(--color-bg);
+  background-color: var(--gold-bright);
+  color: var(--bg-primary);
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -1609,7 +1627,7 @@ body {
 .form-trust {
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   text-align: center;
   margin-top: 12px;
 }
@@ -1627,26 +1645,26 @@ body {
   width: 72px;
   height: 72px;
   background: rgba(255, 215, 0, 0.1);
-  border: 2px solid var(--color-gold);
+  border: 2px solid var(--gold-bright);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 32px;
-  color: var(--color-gold);
+  color: var(--gold-bright);
 }
 
 .success-heading {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   font-size: 28px;
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .success-text {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   max-width: 420px;
   line-height: 1.7;
 }
@@ -1654,11 +1672,11 @@ body {
 .success-note {
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
 }
 
 .success-phone {
-  color: var(--color-gold);
+  color: var(--gold-bright);
   text-decoration: none;
 }
 
@@ -1681,7 +1699,7 @@ body {
    ========================================= */
 
 #faq {
-  background-color: var(--color-bg-3);
+  background-color: var(--bg-light);
   padding: 72px 20px;
 }
 
@@ -1699,7 +1717,7 @@ body {
   font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
-  color: var(--color-text-dark);
+  color: var(--text-dark);
   margin-bottom: 48px;
 }
 
@@ -1723,14 +1741,14 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: var(--color-text-dark);
+  color: var(--text-dark);
   text-align: left;
   gap: 16px;
   transition: color 0.2s ease;
 }
 
 .faq-question:hover {
-  color: var(--color-gold-deep);
+  color: var(--gold-deep);
 }
 
 .faq-question svg {
@@ -1756,7 +1774,7 @@ body {
 .faq-answer p {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-text-dark-muted);
+  color: var(--text-dark-muted);
   line-height: 1.75;
 }
 
@@ -1768,7 +1786,7 @@ body {
 .faq-bottom-text {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-text-dark-muted);
+  color: var(--text-dark-muted);
 }
 
 .faq-bottom-links {
@@ -1782,7 +1800,7 @@ body {
 .faq-contact-link {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
-  color: var(--color-gold-deep);
+  color: var(--gold-deep);
   text-decoration: none;
 }
 
@@ -1835,14 +1853,14 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 0.2em;
-  color: var(--color-gold);
+  color: var(--gold-bright);
   margin-top: 12px;
 }
 
 .footer-brand-desc {
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   line-height: 1.7;
   margin-top: 16px;
   max-width: 240px;
@@ -1855,12 +1873,12 @@ body {
 }
 
 .footer-social-link {
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   transition: color 0.2s ease;
 }
 
 .footer-social-link:hover {
-  color: var(--color-gold);
+  color: var(--gold-bright);
 }
 
 .footer-col-heading {
@@ -1868,7 +1886,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 11px;
   letter-spacing: 0.15em;
-  color: var(--color-gold);
+  color: var(--gold-bright);
   margin-bottom: 20px;
 }
 
@@ -1880,19 +1898,19 @@ body {
 .footer-nav a {
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   text-decoration: none;
   line-height: 2.2;
   transition: color 0.2s ease;
 }
 
 .footer-nav a:hover {
-  color: var(--color-text);
+  color: var(--text-primary);
   text-decoration: underline;
 }
 
 .footer-nav-highlight {
-  color: var(--color-gold) !important;
+  color: var(--gold-bright) !important;
 }
 
 .footer-contact-list {
@@ -1906,19 +1924,19 @@ body {
   gap: 10px;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   text-decoration: none;
   line-height: 2.4;
   transition: color 0.2s ease;
 }
 
 a.footer-contact-item:hover {
-  color: var(--color-text);
+  color: var(--text-primary);
 }
 
 .footer-contact-item svg {
   flex-shrink: 0;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
 }
 
 .footer-contact-item--plain {
@@ -1928,7 +1946,7 @@ a.footer-contact-item:hover {
 .footer-cta-text {
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  color: var(--color-text-muted);
+  color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -1942,7 +1960,7 @@ a.footer-contact-item:hover {
   display: block;
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
-  color: var(--color-gold);
+  color: var(--gold-bright);
   text-decoration: none;
   margin-top: 12px;
   cursor: pointer;
@@ -1969,7 +1987,7 @@ a.footer-contact-item:hover {
 .footer-copyright {
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
-  color: rgba(240, 237, 230, 0.3);
+  color: rgba(245, 242, 236, 0.3);
 }
 
 .footer-legal {
@@ -1978,17 +1996,17 @@ a.footer-contact-item:hover {
 }
 
 .footer-legal a {
-  color: rgba(240, 237, 230, 0.3);
+  color: rgba(245, 242, 236, 0.3);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .footer-legal a:hover {
-  color: rgba(240, 237, 230, 0.7);
+  color: rgba(245, 242, 236, 0.7);
 }
 
 .footer-legal-sep {
-  color: rgba(240, 237, 230, 0.3);
+  color: rgba(245, 242, 236, 0.3);
   margin: 0 8px;
 }
 
@@ -2107,7 +2125,7 @@ a.footer-contact-item:hover {
    ========================================= */
 
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--gold-bright);
   outline-offset: 2px;
 }
 
@@ -2120,6 +2138,6 @@ a.footer-contact-item:hover {
 }
 
 .custom-checkbox input[type="checkbox"]:focus-visible ~ .checkmark {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--gold-bright);
   outline-offset: 2px;
 }
