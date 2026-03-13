@@ -5,7 +5,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // --- Nav scroll behavior ---
-  // TODO: Sticky nav background change on scroll, smooth scroll to sections
+  const nav = document.getElementById('nav');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
 
   // --- Fade-in observer ---
   // TODO: IntersectionObserver for fade-in-up animations on section headings
