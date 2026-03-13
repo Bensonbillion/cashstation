@@ -109,3 +109,206 @@ body {
     padding: 10px 24px;
   }
 }
+
+/* =========================================
+   Hero
+   ========================================= */
+
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px 0;
+  background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(196, 162, 101, 0.08) 0%, transparent 70%), var(--color-bg);
+  overflow: hidden;
+}
+
+#tsparticles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 680px;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroFadeIn 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-label-line {
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-gold);
+  margin-bottom: 8px;
+}
+
+.hero-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+  text-transform: uppercase;
+}
+
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin-top: 24px;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #C4A265 0%, #FFD700 50%, #C4A265 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.hero-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-muted);
+  max-width: 480px;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--color-bg);
+  background-color: var(--color-gold-cta);
+  padding: 14px 32px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #E8C84A;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--color-gold);
+  background: transparent;
+  border: 1.5px solid var(--color-gold);
+  padding: 14px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(196, 162, 101, 0.08);
+}
+
+.btn-secondary svg {
+  flex-shrink: 0;
+}
+
+.hero-trust {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--color-muted);
+  margin-top: 20px;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  text-decoration: none;
+}
+
+.hero-chevron {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-gold);
+  transform: rotate(45deg);
+  opacity: 0.5;
+  animation: chevronBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes chevronBounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); }
+  50% { transform: rotate(45deg) translateY(6px); }
+}
+
+/* Mobile CTA stacking is default (column). Side-by-side at 480px+ */
+@media (min-width: 480px) {
+  .hero-ctas {
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  #hero {
+    padding: 64px 48px 0;
+  }
+
+  .hero-headline {
+    font-size: 52px;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+  }
+}
