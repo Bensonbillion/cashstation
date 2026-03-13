@@ -4,6 +4,21 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- Money rain background ---
+  const rainContainer = document.querySelector('.money-rain-container');
+  if (rainContainer) {
+    for (let i = 0; i < 12; i++) {
+      const bill = document.createElement('span');
+      bill.className = 'money-bill';
+      bill.style.left = (5 + Math.random() * 85) + '%';
+      bill.style.animationDelay = (Math.random() * 8) + 's';
+      bill.style.animationDuration = (6 + Math.random() * 6) + 's';
+      const rot = Math.floor(-30 + Math.random() * 60) + 'deg';
+      bill.style.setProperty('--rot', rot);
+      rainContainer.appendChild(bill);
+    }
+  }
+
   // --- Nav scroll behavior ---
   const nav = document.getElementById('nav');
 

@@ -59,36 +59,78 @@
       <p class="hero-trust">Trusted at GTA weddings, birthdays &amp; cultural celebrations</p>
     </div>
     <div class="hero-visual">
-      <div class="hero-glow"></div>
-      <div class="hero-machine">
-        <div class="machine-header">
-          <svg width="20" height="13" viewBox="0 0 28 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="0.75" y="0.75" width="26.5" height="16.5" rx="2.25" stroke="#FFD700" stroke-width="1.5"/>
-            <circle cx="5.5" cy="9" r="2.25" stroke="#FFD700" stroke-width="1.5"/>
-            <circle cx="22.5" cy="9" r="2.25" stroke="#FFD700" stroke-width="1.5"/>
-          </svg>
-          <span class="machine-header-text">MYCASHSTATION</span>
-        </div>
-        <div class="machine-screen">
-          <span class="machine-screen-text">TAP TO GET STARTED</span>
-        </div>
-        <span class="machine-tagline">TAP · VEND · CELEBRATE</span>
-        <div class="machine-dispenser"></div>
-        <span class="machine-dispenser-label">CASH OUT HERE</span>
+      <div class="hero-machine-glow"></div>
+      <svg class="hero-machine-svg" viewBox="0 0 280 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="machineGrad" x1="140" y1="10" x2="140" y2="500" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1E1E1E"/><stop offset="1" stop-color="#141414"/>
+          </linearGradient>
+          <linearGradient id="headerGrad" x1="140" y1="10" x2="140" y2="80" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#2A2400"/><stop offset="1" stop-color="#1A1600"/>
+          </linearGradient>
+          <linearGradient id="billGrad" x1="70" y1="355" x2="210" y2="383" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E8E8C0"/><stop offset="1" stop-color="#D4D4A0"/>
+          </linearGradient>
+          <linearGradient id="baseGrad" x1="140" y1="480" x2="140" y2="500" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#252525"/><stop offset="1" stop-color="#1A1A1A"/>
+          </linearGradient>
+          <linearGradient id="edgeGlow" x1="0" y1="30" x2="0" y2="470" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFD700" stop-opacity="0"/><stop offset="0.5" stop-color="#FFD700" stop-opacity="0.4"/><stop offset="1" stop-color="#FFD700" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <!-- Machine body -->
+        <rect x="20" y="10" width="240" height="490" rx="20" fill="url(#machineGrad)" stroke="#FFD700" stroke-width="1.5"/>
+        <!-- Header panel -->
+        <rect x="20" y="10" width="240" height="70" rx="20" fill="url(#headerGrad)"/>
+        <!-- Header banknote icon -->
+        <rect x="56" y="34" width="20" height="13" rx="2" stroke="#FFD700" stroke-width="1" fill="none"/>
+        <circle cx="61" cy="40.5" r="2" stroke="#FFD700" stroke-width="0.8" fill="none"/>
+        <circle cx="71" cy="40.5" r="2" stroke="#FFD700" stroke-width="0.8" fill="none"/>
+        <!-- Header text -->
+        <text x="148" y="45" text-anchor="middle" fill="#FFD700" font-size="13" font-family="DM Sans, sans-serif" letter-spacing="3" font-weight="500">MYCASHSTATION</text>
+        <!-- Header bottom border -->
+        <line x1="20" y1="80" x2="260" y2="80" stroke="#FFD700" stroke-width="0.5" stroke-opacity="0.4"/>
+        <!-- Screen area -->
+        <rect class="machine-screen-rect" x="35" y="92" width="210" height="180" rx="8" fill="#000000" stroke="#FFD700" stroke-width="1" stroke-opacity="0.5"/>
+        <!-- Screen: contactless wave icon -->
+        <path d="M128 148 Q132 144 136 148" stroke="#FFD700" stroke-width="1" stroke-opacity="0.4" fill="none" stroke-linecap="round"/>
+        <path d="M124 144 Q132 136 140 144" stroke="#FFD700" stroke-width="1" stroke-opacity="0.3" fill="none" stroke-linecap="round"/>
+        <path d="M120 140 Q132 128 144 140" stroke="#FFD700" stroke-width="1" stroke-opacity="0.2" fill="none" stroke-linecap="round"/>
+        <!-- Screen text -->
+        <text x="140" y="172" text-anchor="middle" fill="rgba(255,215,0,0.5)" font-size="11" font-family="DM Sans, sans-serif" letter-spacing="1.5">TAP CARD TO</text>
+        <text x="140" y="190" text-anchor="middle" fill="rgba(255,215,0,0.7)" font-size="13" font-family="DM Sans, sans-serif" font-weight="bold" letter-spacing="1.5">GET STARTED</text>
+        <!-- Card reader strip -->
+        <rect x="35" y="284" width="210" height="30" rx="4" fill="#111111" stroke="rgba(255,215,0,0.2)" stroke-width="1"/>
+        <text x="140" y="303" text-anchor="middle" fill="rgba(255,215,0,0.4)" font-size="8" font-family="DM Sans, sans-serif" letter-spacing="1">VISA · MC · AMEX · TAP</text>
+        <!-- Tagline strip -->
+        <text x="140" y="332" text-anchor="middle" fill="rgba(255,215,0,0.5)" font-size="9" font-family="DM Sans, sans-serif" letter-spacing="2">TAP · VEND · CELEBRATE</text>
+        <!-- Dispenser slot -->
+        <rect x="55" y="345" width="170" height="50" rx="8" fill="#080808" stroke="#FFD700" stroke-width="1" stroke-opacity="0.6"/>
+        <!-- Bill in dispenser -->
+        <rect x="70" y="355" width="140" height="28" rx="3" fill="url(#billGrad)" stroke="rgba(255,215,0,0.3)" stroke-width="0.5"/>
+        <text x="78" y="376" fill="rgba(60,80,40,0.6)" font-size="7" font-family="serif" font-weight="bold">1</text>
+        <text x="202" y="376" fill="rgba(60,80,40,0.6)" font-size="7" font-family="serif" font-weight="bold">1</text>
+        <ellipse cx="140" cy="369" rx="14" ry="12" fill="rgba(255,215,0,0.15)" stroke="rgba(100,120,60,0.5)" stroke-width="0.5"/>
+        <!-- Dispenser label -->
+        <text x="140" y="413" text-anchor="middle" fill="rgba(255,215,0,0.6)" font-size="9" font-family="DM Sans, sans-serif" letter-spacing="1.5">CASH OUT HERE</text>
+        <!-- Bottom base -->
+        <rect x="40" y="480" width="200" height="20" rx="8" fill="url(#baseGrad)"/>
+        <!-- Edge lighting -->
+        <rect x="20" y="30" width="3" height="440" rx="1" fill="url(#edgeGlow)"/>
+        <rect x="257" y="30" width="3" height="440" rx="1" fill="url(#edgeGlow)"/>
+      </svg>
+      <!-- Floating bills around machine -->
+      <div class="hero-float-bill hero-float-bill--1">
+        <svg width="48" height="22" viewBox="0 0 48 22" fill="none"><rect x="0.5" y="0.5" width="47" height="21" rx="3" fill="rgba(232,232,180,0.15)" stroke="rgba(255,215,0,0.4)" stroke-width="0.5"/><text x="4" y="16" fill="rgba(60,80,40,0.5)" font-size="6" font-family="serif">1</text><text x="41" y="16" fill="rgba(60,80,40,0.5)" font-size="6" font-family="serif">1</text><ellipse cx="24" cy="11" rx="6" ry="5" fill="rgba(255,215,0,0.1)" stroke="rgba(100,120,60,0.3)" stroke-width="0.5"/></svg>
       </div>
-      <div class="hero-bill hero-bill-1"></div>
-      <div class="hero-bill hero-bill-2"></div>
-      <div class="hero-bill hero-bill-3"></div>
-      <div class="hero-photo-strip">
-        <div class="hero-photo-circle">
-          <img src="https://images.pexels.com/photos/1190297/pexels-photo-1190297.jpeg?w=200" alt="Party celebration" loading="lazy">
-        </div>
-        <div class="hero-photo-circle">
-          <img src="https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?w=200" alt="Wedding celebration" loading="lazy">
-        </div>
-        <span class="hero-photo-strip-label">Trusted at GTA celebrations</span>
+      <div class="hero-float-bill hero-float-bill--2">
+        <svg width="48" height="22" viewBox="0 0 48 22" fill="none"><rect x="0.5" y="0.5" width="47" height="21" rx="3" fill="rgba(232,232,180,0.15)" stroke="rgba(255,215,0,0.4)" stroke-width="0.5"/><text x="4" y="16" fill="rgba(60,80,40,0.5)" font-size="6" font-family="serif">1</text><text x="41" y="16" fill="rgba(60,80,40,0.5)" font-size="6" font-family="serif">1</text><ellipse cx="24" cy="11" rx="6" ry="5" fill="rgba(255,215,0,0.1)" stroke="rgba(100,120,60,0.3)" stroke-width="0.5"/></svg>
+      </div>
+      <div class="hero-float-bill hero-float-bill--3">
+        <svg width="48" height="22" viewBox="0 0 48 22" fill="none"><rect x="0.5" y="0.5" width="47" height="21" rx="3" fill="rgba(232,232,180,0.15)" stroke="rgba(255,215,0,0.4)" stroke-width="0.5"/><text x="4" y="16" fill="rgba(60,80,40,0.5)" font-size="6" font-family="serif">1</text><text x="41" y="16" fill="rgba(60,80,40,0.5)" font-size="6" font-family="serif">1</text><ellipse cx="24" cy="11" rx="6" ry="5" fill="rgba(255,215,0,0.1)" stroke="rgba(100,120,60,0.3)" stroke-width="0.5"/></svg>
       </div>
     </div>
+    <div class="money-rain-container"></div>
     <a href="#what-is" class="hero-scroll-indicator" aria-label="Scroll to next section">
       <span class="hero-chevron"></span>
     </a>

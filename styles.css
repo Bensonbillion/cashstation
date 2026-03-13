@@ -148,16 +148,13 @@ body {
   gap: 32px;
   align-items: center;
   padding: 120px 24px 80px;
-  background: radial-gradient(ellipse 80% 60% at 30% 50%, rgba(255,215,0,0.04) 0%, transparent 60%), var(--bg-primary);
-  background-size: 200% 200%;
-  animation: heroGlow 8s ease infinite;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(255,215,0,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 80% 30%, rgba(255,215,0,0.03) 0%, transparent 50%),
+    var(--bg-primary);
   overflow: hidden;
 }
 
-@keyframes heroGlow {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
 
 .hero-content {
   position: relative;
@@ -207,7 +204,7 @@ body {
 }
 
 .shimmer-text {
-  background: linear-gradient(90deg, #FFD700 0%, #FFF176 50%, #FFD700 100%);
+  background: linear-gradient(90deg, #FFD700 0%, #FFF59D 50%, #FFD700 100%);
   background-size: 200% auto;
   background-clip: text;
   -webkit-background-clip: text;
@@ -312,192 +309,127 @@ body {
   margin-top: 20px;
 }
 
-/* Hero visual — machine showcase */
+/* Hero visual — SVG machine showcase */
 .hero-visual {
   position: relative;
-  height: 340px;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.hero-glow {
+.hero-machine-glow {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(255,215,0,0.06) 0%, transparent 70%);
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(255,215,0,0.12) 0%, transparent 70%);
   z-index: 0;
   pointer-events: none;
+  animation: machineGlowPulse 3s ease-in-out infinite;
 }
 
-.hero-machine {
-  width: 220px;
-  height: 380px;
-  margin: 0 auto;
-  background: linear-gradient(180deg, #1a1a1a 0%, #222222 100%);
-  border: 2px solid rgba(255,215,0,0.4);
-  border-radius: 24px;
-  box-shadow: 0 0 60px rgba(255,215,0,0.15), 0 0 120px rgba(255,215,0,0.06);
+@keyframes machineGlowPulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.hero-machine-svg {
   position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   z-index: 1;
-}
-
-.machine-header {
-  width: 100%;
-  height: 48px;
-  background: rgba(255,215,0,0.1);
-  border-bottom: 1px solid rgba(255,215,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-shrink: 0;
-}
-
-.machine-header svg {
-  flex-shrink: 0;
-}
-
-.machine-header-text {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  color: var(--gold-bright);
-}
-
-.machine-screen {
-  width: calc(100% - 24px);
-  height: 160px;
-  margin: 12px auto;
-  background: #000000;
-  border-radius: 8px;
-  border: 1px solid rgba(255,215,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: screenPulse 2s ease-in-out infinite;
-  flex-shrink: 0;
+  width: 220px;
+  height: auto;
 }
 
 @keyframes screenPulse {
-  0%, 100% { border-color: rgba(255,215,0,0.2); }
-  50% { border-color: rgba(255,215,0,0.6); }
+  0%, 100% { stroke-opacity: 0.3; }
+  50% { stroke-opacity: 0.8; }
 }
 
-.machine-screen-text {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.15em;
-  color: rgba(255,215,0,0.5);
+.machine-screen-rect {
+  animation: screenPulse 2s ease-in-out infinite;
 }
 
-.machine-tagline {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: rgba(255,215,0,0.6);
-  margin: 8px 0;
-  flex-shrink: 0;
-}
-
-.machine-dispenser {
-  width: 70%;
-  height: 40px;
-  background: #000;
-  border: 1px solid rgba(255,215,0,0.3);
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-.machine-dispenser-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  color: rgba(255,215,0,0.5);
-  margin-top: 6px;
-  flex-shrink: 0;
-}
-
-/* Floating bills */
-.hero-bill {
+/* Floating bills around SVG machine */
+.hero-float-bill {
   position: absolute;
-  width: 40px;
-  height: 20px;
-  border-radius: 4px;
-  background: rgba(255,215,0,0.15);
-  border: 1px solid rgba(255,215,0,0.4);
   z-index: 2;
 }
 
-.hero-bill-1 {
-  top: 10%;
+.hero-float-bill svg {
+  display: block;
+}
+
+.hero-float-bill--1 {
+  top: 15%;
+  left: -30px;
+  transform: rotate(-20deg);
+  animation: floatBill1 3.5s ease-in-out infinite;
+}
+
+.hero-float-bill--2 {
+  top: 45%;
+  right: -28px;
+  transform: rotate(15deg);
+  animation: floatBill2 4s ease-in-out infinite;
+}
+
+.hero-float-bill--3 {
+  bottom: 25%;
   left: -20px;
-  transform: rotate(-15deg);
-  animation: billFloat1 3s ease-in-out infinite;
+  transform: rotate(-10deg);
+  animation: floatBill3 3s ease-in-out infinite;
 }
 
-.hero-bill-2 {
-  top: 40%;
-  right: -24px;
-  transform: rotate(12deg);
-  animation: billFloat2 4s ease-in-out infinite;
+@keyframes floatBill1 {
+  0%, 100% { transform: rotate(-20deg) translateY(0); }
+  50% { transform: rotate(-20deg) translateY(-14px); }
 }
 
-.hero-bill-3 {
-  bottom: 20%;
-  left: -16px;
-  transform: rotate(-8deg);
-  animation: billFloat3 3.5s ease-in-out infinite;
+@keyframes floatBill2 {
+  0%, 100% { transform: rotate(15deg) translateY(0); }
+  50% { transform: rotate(15deg) translateY(-14px); }
 }
 
-@keyframes billFloat1 {
-  0%, 100% { transform: rotate(-15deg) translateY(0); }
-  50% { transform: rotate(-15deg) translateY(-12px); }
+@keyframes floatBill3 {
+  0%, 100% { transform: rotate(-10deg) translateY(0); }
+  50% { transform: rotate(-10deg) translateY(-14px); }
 }
 
-@keyframes billFloat2 {
-  0%, 100% { transform: rotate(12deg) translateY(0); }
-  50% { transform: rotate(12deg) translateY(-12px); }
-}
-
-@keyframes billFloat3 {
-  0%, 100% { transform: rotate(-8deg) translateY(0); }
-  50% { transform: rotate(-8deg) translateY(-12px); }
-}
-
-/* Hero photo strip — desktop only */
-.hero-photo-strip {
-  display: none;
-}
-
-.hero-photo-circle {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 2px solid rgba(255,215,0,0.4);
+/* Money rain background */
+.money-rain-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   overflow: hidden;
-  flex-shrink: 0;
+  z-index: 0;
 }
 
-.hero-photo-circle img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.money-bill {
+  position: absolute;
+  width: 44px;
+  height: 20px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, rgba(232,232,180,0.08), rgba(200,200,140,0.05));
+  border: 1px solid rgba(255,215,0,0.15);
+  pointer-events: none;
+  animation: billFall linear infinite;
 }
 
-.hero-photo-strip-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  color: var(--text-muted);
+@keyframes billFall {
+  from {
+    transform: translateY(-60px) rotate(var(--rot));
+    opacity: 0;
+  }
+  20% { opacity: 1; }
+  80% { opacity: 0.6; }
+  to {
+    transform: translateY(110vh) rotate(var(--rot));
+    opacity: 0;
+  }
 }
 
 .hero-scroll-indicator {
@@ -536,9 +468,9 @@ body {
 @media (min-width: 768px) {
   #hero {
     min-height: 100vh;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 48px;
-    padding: 64px 48px 0;
+    padding: 0 64px;
   }
 
   .hero-content {
@@ -564,21 +496,8 @@ body {
     height: 520px;
   }
 
-  .hero-machine {
+  .hero-machine-svg {
     width: 260px;
-    height: 460px;
-  }
-
-  .machine-screen {
-    height: 200px;
-  }
-
-  .hero-photo-strip {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 32px;
-    justify-content: center;
   }
 
   .hero-scroll-indicator {
