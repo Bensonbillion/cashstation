@@ -614,3 +614,215 @@ body {
     margin-top: 64px;
   }
 }
+
+/* =========================================
+   Experiences (Product Cards)
+   ========================================= */
+
+#experiences {
+  padding: 72px 20px;
+}
+
+.exp-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.exp-header {
+  text-align: center;
+}
+
+.exp-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.exp-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  color: var(--color-muted);
+  margin-bottom: 48px;
+}
+
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Shared card styles */
+.exp-card {
+  position: relative;
+  border-radius: 16px;
+  padding: 36px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.exp-card:hover {
+  border-color: rgba(196, 162, 101, 0.7);
+  box-shadow: 0 8px 40px rgba(196, 162, 101, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Card 1 — Custom Notes (premium) */
+.exp-card--custom {
+  background: linear-gradient(145deg, #141414, #1a1500);
+  border: 1px solid rgba(196, 162, 101, 0.35);
+}
+
+/* Card 2 — Real $1 Bills */
+.exp-card--bills {
+  background: linear-gradient(145deg, #141414, #141414);
+  border: 1px solid rgba(196, 162, 101, 0.2);
+}
+
+/* Most Popular badge */
+.exp-badge {
+  position: absolute;
+  top: -1px;
+  right: 24px;
+  background-color: var(--color-gold-cta);
+  color: var(--color-bg);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  padding: 6px 14px;
+  border-radius: 0 0 8px 8px;
+}
+
+.exp-card-icon {
+  margin-bottom: 24px;
+}
+
+.exp-card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 26px;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.exp-card-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--color-gold);
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.exp-card-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.exp-card-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.exp-card-features li {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--color-text);
+  padding-left: 22px;
+  position: relative;
+}
+
+.exp-card-features li::before {
+  content: '\2726';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
+}
+
+/* Card CTAs */
+.exp-card-cta {
+  display: block;
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.exp-card-cta--primary {
+  background-color: var(--color-gold-cta);
+  color: var(--color-bg);
+  border: none;
+}
+
+.exp-card-cta--primary:hover {
+  background-color: #E8C84A;
+  transform: translateY(-1px);
+}
+
+.exp-card-cta--secondary {
+  background: transparent;
+  color: var(--color-gold);
+  border: 1.5px solid var(--color-gold);
+}
+
+.exp-card-cta--secondary:hover {
+  background-color: rgba(196, 162, 101, 0.08);
+}
+
+/* Bottom note */
+.exp-bottom-note {
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--color-muted);
+  margin-top: 32px;
+}
+
+.exp-ask-link {
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.exp-ask-link:hover {
+  text-decoration: underline;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  #experiences {
+    padding: 100px 24px;
+  }
+
+  .exp-heading {
+    font-size: 38px;
+  }
+
+  .exp-sub {
+    margin-bottom: 64px;
+  }
+
+  .exp-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .exp-card {
+    padding: 48px 40px;
+  }
+}

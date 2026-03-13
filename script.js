@@ -59,6 +59,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeEls.forEach(el => fadeObserver.observe(el));
 
+  // --- Experience card preselect ---
+  function preselectService(value) {
+    const checkbox = document.querySelector('#book input[type="checkbox"][value="' + value + '"]');
+    if (checkbox) {
+      checkbox.checked = true;
+    }
+  }
+
+  document.querySelectorAll('.exp-card-cta[data-service]').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      preselectService(btn.dataset.service);
+    });
+  });
+
   // --- Confetti trigger ---
   // TODO: Fire gold & black confetti burst on inquiry form submission
 
