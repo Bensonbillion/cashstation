@@ -346,7 +346,73 @@
   </section>
 
   <section id="book">
-    <!-- Inquiry form -->
+    <div class="section-divider"></div>
+    <div class="book-container">
+      <div class="book-header fade-in-up">
+        <span class="eyebrow">BOOK YOUR DATE</span>
+        <h2 class="book-heading">Let's make your event unforgettable.</h2>
+        <p class="book-sub">Fill in a few details and we'll confirm availability and send a custom quote — within 2 hours.</p>
+      </div>
+      <form id="inquiry-form" class="fade-in-up" data-delay="0.1">
+        <div class="form-field">
+          <label for="field-name">Full Name</label>
+          <input type="text" name="name" id="field-name" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="field-phone">Phone Number</label>
+          <input type="tel" name="phone" id="field-phone" placeholder="+1 (416) 000-0000" required autocomplete="tel">
+          <span class="field-helper">We'll use this to send your quote via WhatsApp or call.</span>
+        </div>
+        <div class="form-field">
+          <label for="field-date">Event Date</label>
+          <input type="date" name="event-date" id="field-date" required>
+          <span class="field-helper">Not sure yet? Enter your best estimate.</span>
+        </div>
+        <div class="form-field">
+          <label for="field-event-type">Event Type</label>
+          <select name="event-type" id="field-event-type" required>
+            <option value="" disabled selected>Select your event type</option>
+            <option value="nigerian-wedding">Nigerian / Ghanaian Wedding</option>
+            <option value="arab-wedding">Arab / Middle Eastern Wedding</option>
+            <option value="caribbean-event">Caribbean Event or Birthday</option>
+            <option value="birthday">Birthday Party</option>
+            <option value="nightlife">Nightlife / Club Event</option>
+            <option value="corporate">Corporate or Brand Event</option>
+            <option value="other">Other Celebration</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>I'm interested in...</label>
+          <div class="checkbox-group">
+            <label class="custom-checkbox">
+              <input type="checkbox" name="service[]" value="Custom Novelty Notes" id="service-custom">
+              <span class="checkmark"></span>
+              <span class="checkbox-label-text">Custom Novelty Notes (faces printed on notes)</span>
+            </label>
+            <label class="custom-checkbox">
+              <input type="checkbox" name="service[]" value="Real $1 Bill Spraying" id="service-real">
+              <span class="checkmark"></span>
+              <span class="checkbox-label-text">Real $1 USD Bill Spraying</span>
+            </label>
+          </div>
+        </div>
+        <button type="button" id="submit-btn">Check Availability &rarr;</button>
+        <p class="form-trust">No commitment · Free quote · We reply within 2 hours</p>
+      </form>
+      <div id="form-success">
+        <div class="success-check">&#10003;</div>
+        <h3 class="success-heading">You're on your way to the best event ever.</h3>
+        <p class="success-text">We've received your inquiry and will confirm availability with a custom quote within 2 hours. Check your WhatsApp or phone.</p>
+        <a href="https://wa.me/14160000000?text=Hi!%20I%20just%20submitted%20an%20inquiry%20on%20your%20website." target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#C4A265"/>
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a8 8 0 01-4.243-1.214l-.257-.154-2.871.853.853-2.871-.154-.257A8 8 0 1112 20z" fill="#C4A265"/>
+          </svg>
+          Chat with us on WhatsApp
+        </a>
+        <p class="success-note">Can't wait? Call or text us directly: <a href="tel:+14160000000" class="success-phone">+1 (416) XXX-XXXX</a></p>
+      </div>
+    </div>
   </section>
 
   <section id="faq">
