@@ -158,6 +158,40 @@ document.addEventListener('DOMContentLoaded', () => {
   // TODO: Floating WhatsApp button visibility and link behavior
 
   // --- FAQ accordion ---
-  // TODO: Toggle open/close on FAQ items
+  const faqButtons = document.querySelectorAll('.faq-question');
+
+  function closeAllFaq() {
+    document.querySelectorAll('.faq-item.open').forEach(item => {
+      item.classList.remove('open');
+      item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      item.querySelector('.faq-answer').style.maxHeight = '0';
+    });
+  }
+
+  faqButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-answer');
+      const isOpen = item.classList.contains('open');
+
+      closeAllFaq();
+
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Open first FAQ item by default
+  const firstFaq = document.querySelector('.faq-item');
+  if (firstFaq) {
+    const firstAnswer = firstFaq.querySelector('.faq-answer');
+    const firstBtn = firstFaq.querySelector('.faq-question');
+    firstFaq.classList.add('open');
+    firstBtn.setAttribute('aria-expanded', 'true');
+    firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
+  }
 
 });

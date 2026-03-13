@@ -1365,3 +1365,132 @@ body {
     font-size: 38px;
   }
 }
+
+/* =========================================
+   FAQ Accordion
+   ========================================= */
+
+#faq {
+  background-color: #0F0F0F;
+  padding: 72px 20px;
+}
+
+.faq-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  text-align: center;
+}
+
+.faq-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  color: var(--color-text);
+  margin-bottom: 48px;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(196, 162, 101, 0.12);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(196, 162, 101, 0.12);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 24px 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text);
+  text-align: left;
+  gap: 16px;
+  transition: color 0.2s ease;
+}
+
+.faq-question:hover {
+  color: var(--color-gold);
+}
+
+.faq-question svg {
+  flex-shrink: 0;
+  transition: transform 0.35s ease;
+}
+
+.faq-item.open .faq-question svg {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0;
+}
+
+.faq-item.open .faq-answer {
+  padding: 0 0 24px 0;
+}
+
+.faq-answer p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.faq-bottom {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.faq-bottom-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+.faq-bottom-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.faq-contact-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  color: var(--color-gold);
+  text-decoration: none;
+}
+
+.faq-contact-link:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  #faq {
+    padding: 100px 24px;
+  }
+
+  .faq-heading {
+    font-size: 38px;
+    margin-bottom: 64px;
+  }
+
+  .faq-bottom {
+    margin-top: 64px;
+  }
+}
