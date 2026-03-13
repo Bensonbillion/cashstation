@@ -47,6 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const fadeObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay;
+        if (delay) {
+          entry.target.style.transitionDelay = delay + 's';
+        }
         entry.target.classList.add('visible');
         observer.unobserve(entry.target);
       }
