@@ -13,17 +13,21 @@ MyCashStation is a Toronto/GTA-based event vending activation business that brin
 - **Short brand tagline:** TAP · VEND · CELEBRATE
 - **Website hero headline:** "The celebration station your guests won't stop talking about."
 
-## Brand Colors
+## Brand Colors (Design System v2)
 
-| Token | Hex | Usage |
-|---|---|---|
-| Primary background | `#0A0A0A` | Near black — page background |
-| Gold accent (primary) | `#FFD700` | Electric gold — headlines, borders, icons |
-| Gold accent (deep) | `#C4A265` | Deep champagne gold — subtle accents on light backgrounds |
-| Gold accent (CTA) | `#FFD700` | Bright gold — buttons and hover states |
-| Body text | `#F0EDE6` | Warm off-white — never use pure white |
-| Muted text | `#9A9A8A` | Captions, labels, secondary info |
-| Section dividers | — | Subtle gold gradient lines, not flat borders |
+| Token | Variable | Hex | Usage |
+|---|---|---|---|
+| Primary background | `--bg-primary` | `#0D0D0D` | Near black — page background |
+| Secondary background | `--bg-secondary` | `#141414` | Alternating dark sections |
+| Light background | `--bg-light` | `#FAFAF7` | Alternating light sections |
+| Gold bright | `--gold-bright` | `#FFD700` | Electric gold — headlines, CTAs, icons |
+| Gold mid | `--gold-mid` | `#E6B800` | Hover states, gradients |
+| Gold deep | `--gold-deep` | `#C4A265` | Eyebrow labels on light backgrounds |
+| Body text | `--text-primary` | `#F5F2EC` | Warm off-white — never use pure white |
+| Muted text | `--text-muted` | `#888880` | Captions, labels, secondary info |
+| Dark text | `--text-dark` | `#1A1A1A` | Headings on light sections |
+| Dark muted text | `--text-dark-muted` | `#5A5A5A` | Body text on light sections |
+| Section dividers | — | — | 2px gold gradient lines |
 
 ## Typography
 
@@ -49,7 +53,7 @@ MyCashStation is a Toronto/GTA-based event vending activation business that brin
 
 ## Animations & Effects
 
-- Use `canvas-confetti` (CDN) for confetti burst on form submission — gold and black confetti only (`#C4A265`, `#D4AF37`, `#0A0A0A`)
+- Use `canvas-confetti` (CDN) for confetti burst on form submission — gold and black confetti (`#FFD700`, `#E6B800`, `#C4A265`, `#0D0D0D`, `#F5F2EC`)
 - Subtle fade-in-up on scroll for section headings (CSS only, no heavy libraries)
 - Gold shimmer CSS animation on the hero headline
 - Floating WhatsApp button — bottom right, always visible on mobile

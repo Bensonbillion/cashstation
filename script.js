@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         successDiv.style.display = 'flex';
 
         // Fire confetti
-        const confettiColors = ['#C4A265', '#D4AF37', '#FFD700', '#0A0A0A', '#F0EDE6'];
+        const confettiColors = ['#FFD700', '#E6B800', '#C4A265', '#0D0D0D', '#F5F2EC'];
         const confettiConfig = {
           colors: confettiColors,
           shapes: ['square'],
