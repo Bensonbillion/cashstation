@@ -2238,6 +2238,68 @@ a.footer-contact-item:hover {
 }
 
 /* =========================================
+   Mobile QA — 390px refinements
+   ========================================= */
+
+@media (max-width: 767px) {
+  /* Hero machine */
+  .hero-machine-svg {
+    max-width: 260px;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .hero-visual {
+    overflow: hidden;
+  }
+
+  /* Hide floating bills on mobile */
+  .hero-float-bill {
+    display: none;
+  }
+
+  /* Note showcase */
+  .note-showcase {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .notes-fan {
+    width: 180px;
+  }
+
+  .custom-note {
+    width: 160px;
+    height: 70px;
+  }
+
+  .note-showcase-bill {
+    max-width: 140px;
+  }
+
+  /* Experience badge */
+  .exp-badge {
+    right: 16px;
+  }
+
+  /* How-it-works step numbers */
+  .hiw-step-number {
+    font-size: 72px;
+  }
+
+  /* Social-proof stat banner */
+  .sp-stat-banner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* FAQ question text */
+  .faq-question {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
    Accessibility: Focus-visible outlines
    ========================================= */
 
