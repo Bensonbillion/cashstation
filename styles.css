@@ -118,7 +118,7 @@ body {
 }
 
 .nav-cta:hover {
-  background-color: #FFE44D;
+  background-color: #E6B800;
 }
 
 @media (min-width: 768px) {
@@ -238,9 +238,9 @@ body {
 .btn-primary {
   display: inline-block;
   font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
-  color: var(--bg-primary);
+  color: #0D0D0D;
   background-color: var(--gold-bright);
   padding: 14px 32px;
   border: none;
@@ -267,7 +267,7 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: #FFE44D;
+  background-color: #E6B800;
   transform: translateY(-1px);
 }
 
@@ -883,7 +883,7 @@ body {
   font-weight: 700;
   font-size: 96px;
   line-height: 1;
-  color: rgba(255, 215, 0, 0.08);
+  color: rgba(255, 215, 0, 0.06);
 }
 
 .hiw-step-icon {
@@ -1000,21 +1000,21 @@ body {
   display: flex;
   flex-direction: column;
   background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
   overflow: hidden;
 }
 
 .exp-card:hover {
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
 }
 
 .exp-card--custom,
 .exp-card--bills {
   background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 /* Card body — inner content with padding */
@@ -1126,7 +1126,7 @@ body {
 }
 
 .exp-card-cta--primary:hover {
-  background-color: #FFE44D;
+  background-color: #E6B800;
   transform: translateY(-1px);
 }
 
@@ -1221,11 +1221,18 @@ body {
   width: 48px;
   height: 48px;
   background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.15);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.why-item:hover .why-icon-wrap {
+  background: rgba(255, 215, 0, 0.12);
+  border-color: rgba(255, 215, 0, 0.3);
 }
 
 .why-item-title {
@@ -1346,8 +1353,8 @@ body {
   font-family: 'Playfair Display', serif;
   font-size: 64px;
   line-height: 1;
-  color: var(--gold-deep);
-  opacity: 0.4;
+  color: var(--gold-bright);
+  opacity: 0.5;
   margin-bottom: 4px;
 }
 
@@ -1541,8 +1548,8 @@ body {
 .form-field input[type="date"],
 .form-field select {
   width: 100%;
-  background-color: var(--bg-secondary);
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  background-color: var(--bg-card-dark);
+  border: 1px solid var(--border-dark);
   border-radius: 8px;
   padding: 14px 16px;
   font-family: 'DM Sans', sans-serif;
@@ -1595,7 +1602,7 @@ body {
 
 .form-field select option {
   color: var(--text-primary);
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-card-dark);
 }
 
 /* Custom checkboxes */
@@ -1665,10 +1672,10 @@ body {
 #submit-btn {
   width: 100%;
   background-color: var(--gold-bright);
-  color: var(--bg-primary);
+  color: #0D0D0D;
   font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   padding: 16px;
   border: none;
   border-radius: 8px;
@@ -1692,7 +1699,7 @@ body {
 }
 
 #submit-btn:hover {
-  background-color: #FFE44D;
+  background-color: #E6B800;
   transform: translateY(-1px);
 }
 
@@ -1807,11 +1814,11 @@ body {
 }
 
 .faq-item {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .faq-item:first-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .faq-question {
