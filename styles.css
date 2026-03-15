@@ -324,85 +324,17 @@ body {
   50% { transform: translateY(-12px); }
 }
 
-.hero-machine-glow {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  top: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(255,215,0,0.12) 0%, transparent 70%);
-  z-index: 0;
-  pointer-events: none;
-  animation: machineGlowPulse 3s ease-in-out infinite;
-}
-
-@keyframes machineGlowPulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
-}
-
-.hero-machine-svg {
-  position: relative;
-  z-index: 1;
-  width: 220px;
+/* Hero machine image */
+.hero-machine-img {
+  width: 100%;
+  max-width: 420px;
   height: auto;
-}
-
-@keyframes screenPulse {
-  0%, 100% { stroke-opacity: 0.3; }
-  50% { stroke-opacity: 0.8; }
-}
-
-.machine-screen-rect {
-  animation: screenPulse 2s ease-in-out infinite;
-}
-
-/* Floating bills around SVG machine */
-.hero-float-bill {
-  position: absolute;
-  z-index: 2;
-}
-
-.hero-float-bill svg {
   display: block;
-}
-
-.hero-float-bill--1 {
-  top: 15%;
-  left: -30px;
-  transform: rotate(-20deg);
-  animation: floatBill1 3.5s ease-in-out infinite;
-}
-
-.hero-float-bill--2 {
-  top: 45%;
-  right: -28px;
-  transform: rotate(15deg);
-  animation: floatBill2 4s ease-in-out infinite;
-}
-
-.hero-float-bill--3 {
-  bottom: 25%;
-  left: -20px;
-  transform: rotate(-10deg);
-  animation: floatBill3 3s ease-in-out infinite;
-}
-
-@keyframes floatBill1 {
-  0%, 100% { transform: rotate(-20deg) translateY(0); }
-  50% { transform: rotate(-20deg) translateY(-14px); }
-}
-
-@keyframes floatBill2 {
-  0%, 100% { transform: rotate(15deg) translateY(0); }
-  50% { transform: rotate(15deg) translateY(-14px); }
-}
-
-@keyframes floatBill3 {
-  0%, 100% { transform: rotate(-10deg) translateY(0); }
-  50% { transform: rotate(-10deg) translateY(-14px); }
+  margin: 0 auto;
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  animation: machineFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 20px 60px rgba(0,0,0,0.4));
 }
 
 /* Money rain background */
@@ -499,11 +431,7 @@ body {
   }
 
   .hero-visual {
-    height: 520px;
-  }
-
-  .hero-machine-svg {
-    width: 260px;
+    height: auto;
   }
 
   .hero-scroll-indicator {
@@ -623,127 +551,44 @@ body {
   margin-top: 16px;
 }
 
-/* Note showcase visual */
+/* What-is visual */
 .what-is-visual {
   width: 100%;
-  max-width: 280px;
+  max-width: 320px;
 }
 
-.note-showcase {
+.what-is-machine-img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  background: linear-gradient(135deg, #1a1a14, #141410);
-  border: 1px solid rgba(255,215,0,0.2);
+  max-width: 320px;
+  height: auto;
   border-radius: 16px;
-  padding: 32px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-}
-
-/* SVG bill styling */
-.custom-bill-svg {
-  width: 240px;
-  border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
   display: block;
-}
-
-.custom-bill-svg--real {
-  filter: sepia(0.15) hue-rotate(55deg) saturate(1.3);
-}
-
-.custom-bill-svg--sm {
-  width: 200px;
-}
-
-.notes-fan {
-  position: relative;
-  width: 260px;
-  height: 160px;
-}
-
-/* Fan layout — #what-is section */
-.bill-fan-1 {
-  position: absolute;
-  top: 10px;
-  left: -10px;
-  z-index: 1;
-  transform: rotate(-10deg) scale(0.92);
-  opacity: 0.7;
-}
-
-.bill-fan-2 {
-  position: absolute;
-  top: 10px;
-  right: -10px;
-  z-index: 2;
-  transform: rotate(8deg) scale(0.92);
-  opacity: 0.75;
-}
-
-.bill-fan-3 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-}
-
-.note-showcase-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  color: rgba(255,215,0,0.7);
-  letter-spacing: 0.1em;
-}
-
-.note-showcase-bill {
-  width: 160px;
-}
-
-.note-showcase-bill .custom-bill-svg {
-  width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-  opacity: 0.9;
-  display: block;
+  margin: 0 auto;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.25);
+  object-fit: cover;
 }
 
 /* Experience card note mockup */
 .exp-card-notes {
-  height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, #1a1a14, #141410);
+  height: 160px;
   overflow: hidden;
+}
+
+.exp-card-notes img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .exp-card-notes::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(to bottom, transparent 0%, #FFFFFF 100%);
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(255,255,255,0.95) 100%);
   pointer-events: none;
-  z-index: 5;
-}
-
-.exp-bill-fan-back {
-  position: absolute;
-  z-index: 1;
-  transform: rotate(-6deg);
-  filter: brightness(0.85);
-}
-
-.exp-bill-fan-front {
-  position: relative;
-  z-index: 2;
 }
 
 /* Experience card bill photo */
@@ -751,24 +596,14 @@ body {
   position: relative;
   height: 160px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 8px;
-  background: linear-gradient(135deg, #1a1a14, #141410);
 }
 
-.exp-card-bill-photo .custom-bill-svg {
-  width: 280px;
-}
-
-.exp-card-bill-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 11px;
-  color: rgba(255,215,0,0.6);
-  letter-spacing: 0.08em;
-  text-align: center;
+.exp-card-bill-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .exp-card-bill-photo::after {
@@ -1269,6 +1104,28 @@ body {
 .sp-container {
   max-width: 1000px;
   margin: 0 auto;
+}
+
+/* Machine photo showcase */
+.sp-machine-photo {
+  max-width: 480px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.sp-machine-photo img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.4);
+  display: block;
+}
+
+.sp-machine-caption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  letter-spacing: 0.05em;
 }
 
 /* Stat banner */
@@ -2212,42 +2069,12 @@ a.footer-contact-item:hover {
 
 @media (max-width: 767px) {
   /* Hero machine */
-  .hero-machine-svg {
-    max-width: 260px;
-    width: 100%;
-    margin-top: 40px;
-  }
-
-  .hero-visual {
-    overflow: hidden;
-  }
-
-  /* Hide floating bills on mobile */
-  .hero-float-bill {
-    display: none;
-  }
-
-  /* Note showcase */
-  .note-showcase {
+  .hero-machine-img {
     max-width: 280px;
-    margin: 0 auto;
   }
 
-  .notes-fan {
-    width: 200px;
-    height: 130px;
-  }
-
-  .custom-bill-svg {
-    width: 180px;
-  }
-
-  .custom-bill-svg--sm {
-    width: 150px;
-  }
-
-  .note-showcase-bill {
-    max-width: 140px;
+  .money-rain-container {
+    display: none;
   }
 
   /* Experience badge */
