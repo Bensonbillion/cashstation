@@ -327,14 +327,18 @@ body {
 /* Hero machine image */
 .hero-machine-img {
   width: 100%;
-  max-width: 420px;
+  max-width: 400px;
   height: auto;
   display: block;
   margin: 0 auto;
   border-radius: 24px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  background: #FFFFFF;
+  padding: 24px;
+  box-shadow:
+    0 0 0 1px rgba(255, 215, 0, 0.25),
+    0 24px 80px rgba(0, 0, 0, 0.6),
+    0 8px 24px rgba(0, 0, 0, 0.4);
   animation: machineFloat 6s ease-in-out infinite;
-  filter: drop-shadow(0 20px 60px rgba(0,0,0,0.4));
 }
 
 /* Money rain background */
@@ -371,6 +375,7 @@ body {
 }
 
 .hero-scroll-indicator {
+  display: none;
   position: absolute;
   bottom: 32px;
   left: 50%;
@@ -559,13 +564,16 @@ body {
 
 .what-is-machine-img {
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   height: auto;
-  border-radius: 16px;
   display: block;
   margin: 0 auto;
-  box-shadow: 0 8px 48px rgba(0,0,0,0.25);
-  object-fit: cover;
+  border-radius: 20px;
+  background: #FFFFFF;
+  padding: 20px;
+  box-shadow:
+    0 0 0 1px rgba(196, 162, 101, 0.2),
+    0 16px 48px rgba(0, 0, 0, 0.3);
 }
 
 /* Experience card note mockup */
@@ -594,8 +602,9 @@ body {
 /* Experience card bill photo */
 .exp-card-bill-photo {
   position: relative;
-  height: 160px;
+  height: 180px;
   overflow: hidden;
+  border-radius: 12px 12px 0 0;
 }
 
 .exp-card-bill-photo img {
@@ -610,13 +619,13 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, transparent 60%, rgba(255,255,255,0.95) 100%);
+  background: linear-gradient(to bottom, transparent 40%, #FFFFFF 100%);
   pointer-events: none;
 }
 
 @media (min-width: 768px) {
   #what-is {
-    padding: 100px 24px;
+    padding: 80px 24px;
   }
 
   .what-is-container {
@@ -743,7 +752,7 @@ body {
 
 @media (min-width: 768px) {
   #how-it-works {
-    padding: 100px 24px;
+    padding: 80px 24px;
   }
 
   .hiw-heading {
@@ -989,7 +998,7 @@ body {
 
 @media (min-width: 768px) {
   #experiences {
-    padding: 100px 24px;
+    padding: 80px 24px;
   }
 
   .exp-heading {
@@ -1078,7 +1087,7 @@ body {
 
 @media (min-width: 768px) {
   #why-us {
-    padding: 100px 24px;
+    padding: 80px 24px;
   }
 
   .why-heading {
@@ -1104,28 +1113,6 @@ body {
 .sp-container {
   max-width: 1000px;
   margin: 0 auto;
-}
-
-/* Machine photo showcase */
-.sp-machine-photo {
-  max-width: 480px;
-  margin: 0 auto 48px;
-  text-align: center;
-}
-
-.sp-machine-photo img {
-  width: 100%;
-  border-radius: 16px;
-  box-shadow: 0 8px 48px rgba(0,0,0,0.4);
-  display: block;
-}
-
-.sp-machine-caption {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 12px;
-  letter-spacing: 0.05em;
 }
 
 /* Stat banner */
@@ -1304,7 +1291,7 @@ body {
 
 @media (min-width: 768px) {
   #social-proof {
-    padding: 100px 24px;
+    padding: 80px 24px;
   }
 
   .sp-stat-banner {
@@ -1628,7 +1615,7 @@ body {
 
 @media (min-width: 768px) {
   #book {
-    padding: 100px 24px;
+    padding: 80px 24px;
   }
 
   .book-heading {
@@ -1753,7 +1740,7 @@ body {
 
 @media (min-width: 768px) {
   #faq {
-    padding: 100px 24px;
+    padding: 80px 24px;
   }
 
   .faq-heading {
@@ -2070,11 +2057,18 @@ a.footer-contact-item:hover {
 @media (max-width: 767px) {
   /* Hero machine */
   .hero-machine-img {
-    max-width: 280px;
+    max-width: 260px;
+    padding: 16px;
+    border-radius: 16px;
   }
 
   .money-rain-container {
     display: none;
+  }
+
+  .what-is-machine-img {
+    max-width: 240px;
+    padding: 14px;
   }
 
   /* Experience badge */
