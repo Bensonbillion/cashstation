@@ -607,21 +607,19 @@ body {
   border-radius: 12px 12px 0 0;
 }
 
-.exp-cash-closeup {
-  background-image: url('images/cashcash.png');
-  background-size: 200% 200%;
-  background-position: 100% 0%;
-  background-repeat: no-repeat;
+.exp-card-bill-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
-.exp-cash-closeup::after {
+.exp-card-bill-photo::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(to bottom, transparent, #FFFFFF);
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, #FFFFFF 100%);
   pointer-events: none;
 }
 
@@ -738,20 +736,6 @@ body {
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.7;
-}
-
-.hiw-cash-moment {
-  width: 100%;
-  max-width: 480px;
-  height: 240px;
-  border-radius: 16px;
-  background-image: url('images/cashcash.png');
-  background-size: 200% 200%;
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  margin: 0 auto 40px;
-  display: block;
-  overflow: hidden;
 }
 
 .hiw-bottom-cta {
@@ -2084,11 +2068,6 @@ a.footer-contact-item:hover {
 
   .what-is-event-photo {
     max-width: 260px;
-  }
-
-  .hiw-cash-moment {
-    height: 180px;
-    max-width: 100%;
   }
 
   /* Experience badge */
