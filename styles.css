@@ -562,18 +562,18 @@ body {
   max-width: 320px;
 }
 
-.what-is-machine-img {
+.what-is-event-photo {
   width: 100%;
-  max-width: 300px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  max-width: 320px;
+  aspect-ratio: 3 / 4;
   border-radius: 20px;
-  background: #FFFFFF;
-  padding: 20px;
-  box-shadow:
-    0 0 0 1px rgba(196, 162, 101, 0.2),
-    0 16px 48px rgba(0, 0, 0, 0.3);
+  background-image: url('images/cashcash.png');
+  background-size: 200% 200%;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  display: block;
 }
 
 /* Experience card note mockup */
@@ -607,19 +607,21 @@ body {
   border-radius: 12px 12px 0 0;
 }
 
-.exp-card-bill-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+.exp-cash-closeup {
+  background-image: url('images/cashcash.png');
+  background-size: 200% 200%;
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
 }
 
-.exp-card-bill-photo::after {
+.exp-cash-closeup::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, #FFFFFF 100%);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, #FFFFFF);
   pointer-events: none;
 }
 
@@ -736,6 +738,20 @@ body {
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.7;
+}
+
+.hiw-cash-moment {
+  width: 100%;
+  max-width: 480px;
+  height: 240px;
+  border-radius: 16px;
+  background-image: url('images/cashcash.png');
+  background-size: 200% 200%;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto 40px;
+  display: block;
+  overflow: hidden;
 }
 
 .hiw-bottom-cta {
@@ -2066,9 +2082,13 @@ a.footer-contact-item:hover {
     display: none;
   }
 
-  .what-is-machine-img {
-    max-width: 240px;
-    padding: 14px;
+  .what-is-event-photo {
+    max-width: 260px;
+  }
+
+  .hiw-cash-moment {
+    height: 180px;
+    max-width: 100%;
   }
 
   /* Experience badge */
