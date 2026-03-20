@@ -145,27 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // --- WhatsApp button ---
-  const whatsappFloat = document.getElementById('whatsapp-float');
-
-  if (whatsappFloat) {
-    setTimeout(() => {
-      whatsappFloat.classList.add('visible');
-    }, 1500);
-
-    const bookSection = document.getElementById('book');
-    if (bookSection) {
-      window.addEventListener('scroll', () => {
-        const bookRect = bookSection.getBoundingClientRect();
-        if (bookRect.top < window.innerHeight && bookRect.bottom > 0) {
-          whatsappFloat.classList.add('dimmed');
-        } else {
-          whatsappFloat.classList.remove('dimmed');
-        }
-      });
-    }
-  }
-
   // --- FAQ accordion ---
   const faqButtons = document.querySelectorAll('.faq-question');
 
