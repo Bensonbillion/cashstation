@@ -562,17 +562,16 @@ body {
 .what-is-scene {
   margin-top: 36px;
   padding: 28px 32px;
-  background: #1A1A1A;
+  background: #EDEAE2;
   border-radius: 12px;
-  border-left: 3px solid var(--gold-bright);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border-left: 3px solid var(--gold-deep);
 }
 
 .scene-headline {
   font-family: 'Playfair Display', serif;
   font-size: 22px;
   font-weight: 700;
-  color: var(--gold-bright);
+  color: var(--text-dark);
   margin-bottom: 14px;
 }
 
@@ -580,7 +579,7 @@ body {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px;
   line-height: 1.8;
-  color: #C8C4BC;
+  color: #3A3A3A;
   margin-bottom: 24px;
 }
 
