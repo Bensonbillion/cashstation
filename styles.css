@@ -637,28 +637,89 @@ body {
   display: block;
 }
 
-/* Experience card note mockup */
-.exp-card-notes {
-  position: relative;
+/* Experience card note visual (CSS-only) */
+.exp-card-visual {
   height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px 12px 0 0;
   overflow: hidden;
 }
 
-.exp-card-notes img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+.exp-card-visual--notes {
+  background: linear-gradient(135deg, #1a1a14, #2a2a1a);
+  border-bottom: 1px solid rgba(196, 162, 101, 0.15);
 }
 
-.exp-card-notes::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 60%, rgba(255,255,255,0.95) 100%);
-  pointer-events: none;
+.exp-note-stack {
+  position: relative;
+  width: 200px;
+  height: 88px;
 }
+
+.exp-note {
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #E8E8C0, #D8D8A8);
+  border: 1.5px solid rgba(45, 80, 22, 0.4);
+}
+
+.exp-note--back {
+  transform: rotate(-7deg) translateY(8px) translateX(-8px);
+  opacity: 0.6;
+  filter: brightness(0.85);
+}
+
+.exp-note--mid {
+  transform: rotate(-3deg) translateY(4px) translateX(-4px);
+  opacity: 0.8;
+  filter: brightness(0.92);
+}
+
+.exp-note--front {
+  transform: rotate(0deg);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-note-portrait {
+  width: 42px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(200, 220, 180, 0.4);
+  border: 1px solid rgba(45, 80, 22, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-note-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 6px;
+  letter-spacing: 1.5px;
+  color: rgba(30, 60, 10, 0.5);
+  text-transform: uppercase;
+}
+
+.exp-note-corner {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-size: 9px;
+  color: rgba(30, 60, 10, 0.6);
+  font-weight: bold;
+}
+
+.exp-note-corner--tl { top: 4px; left: 6px; }
+.exp-note-corner--tr { top: 4px; right: 6px; }
+.exp-note-corner--bl { bottom: 4px; left: 6px; }
+.exp-note-corner--br { bottom: 4px; right: 6px; }
 
 /* Experience card bill photo */
 .exp-card-bill-photo {
@@ -1055,6 +1116,27 @@ body {
 
 .exp-ask-link:hover {
   text-decoration: underline;
+}
+
+.exp-card-price {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+
+.feature-highlight {
+  font-weight: 600;
+  color: var(--text-dark) !important;
+}
+
+.feature-highlight::before {
+  content: '\2605' !important;
+  color: var(--gold-deep) !important;
+  font-size: 11px !important;
 }
 
 @media (min-width: 768px) {
