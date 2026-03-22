@@ -1416,39 +1416,40 @@ body {
   margin-top: 2px;
 }
 
-/* Stats bar */
-.sp-stats {
+/* Social proof CTA */
+.sp-cta {
+  text-align: center;
+  margin-top: 64px;
+  padding: 48px 32px;
+  background: rgba(255, 215, 0, 0.04);
+  border: 1px solid rgba(255, 215, 0, 0.12);
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
-  margin-top: 48px;
+  gap: 16px;
 }
 
-.sp-stat {
-  text-align: center;
-}
-
-.sp-stat-number {
-  display: block;
+.sp-cta-headline {
   font-family: 'Playfair Display', serif;
+  font-size: 26px;
   font-weight: 700;
-  font-size: 36px;
-  color: var(--gold-bright);
+  color: var(--text-primary);
+  max-width: 500px;
+  line-height: 1.3;
 }
 
-.sp-stat-label {
-  display: block;
+.sp-cta-sub {
   font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.1em;
+  font-size: 15px;
   color: var(--text-muted);
-  text-transform: uppercase;
-  margin-top: 4px;
+  max-width: 420px;
+  line-height: 1.7;
 }
 
-.sp-stat-divider {
-  display: none;
+.sp-cta .btn-primary {
+  margin-top: 8px;
+  padding: 14px 40px;
 }
 
 @media (min-width: 600px) {
@@ -1482,19 +1483,19 @@ body {
   .testimonial-card {
     padding: 36px 32px;
   }
+}
 
-  .sp-stats {
-    flex-direction: row;
-    justify-content: center;
-    gap: 64px;
-    margin-top: 64px;
+@media (max-width: 768px) {
+  .sp-cta {
+    margin-top: 48px;
+    padding: 36px 20px;
   }
-
-  .sp-stat-divider {
-    display: block;
-    width: 1px;
-    height: 40px;
-    background-color: rgba(255, 215, 0, 0.15);
+  .sp-cta-headline {
+    font-size: 22px;
+  }
+  .sp-cta .btn-primary {
+    width: 100%;
+    text-align: center;
   }
 }
 
