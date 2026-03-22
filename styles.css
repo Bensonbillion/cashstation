@@ -225,7 +225,6 @@ body {
   max-width: 520px;
   margin-top: 20px;
   line-height: 1.7;
-  line-height: 1.6;
 }
 
 .hero-ctas {
@@ -318,7 +317,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: machineFloat 6s ease-in-out infinite;
 }
 
 @keyframes machineFloat {
@@ -591,7 +589,7 @@ body {
   color: #0A0A0A;
   background: var(--gold-bright);
   padding: 12px 28px;
-  border-radius: 6px;
+  border-radius: 4px;
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: background 0.2s ease, transform 0.2s ease;
@@ -604,7 +602,7 @@ body {
   transform: translateY(-1px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .what-is-scene {
     padding: 24px 20px;
   }
@@ -724,7 +722,7 @@ body {
 /* Experience card bill photo */
 .exp-card-bill-photo {
   position: relative;
-  height: 180px;
+  height: 160px;
   overflow: hidden;
   border-radius: 12px 12px 0 0;
 }
@@ -1260,7 +1258,7 @@ body {
   letter-spacing: 0.02em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .why-cta {
     margin-top: 48px;
   }
@@ -1485,7 +1483,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .sp-cta {
     margin-top: 48px;
     padding: 36px 20px;
