@@ -518,7 +518,7 @@ body {
 
 #what-is {
   background-color: var(--bg-light);
-  padding: 72px 20px;
+  padding: 64px 20px;
 }
 
 .what-is-container {
@@ -795,7 +795,7 @@ body {
 
 #how-it-works {
   background-color: var(--bg-secondary);
-  padding: 72px 20px;
+  padding: 64px 20px;
 }
 
 .hiw-container {
@@ -860,7 +860,7 @@ body {
 
 .hiw-bottom-cta {
   text-align: center;
-  margin-top: 48px;
+  margin-top: 36px;
 }
 
 .hiw-bottom-text {
@@ -900,7 +900,7 @@ body {
   }
 
   .hiw-bottom-cta {
-    margin-top: 64px;
+    margin-top: 48px;
   }
 }
 
@@ -910,7 +910,7 @@ body {
 
 #experiences {
   background-color: var(--bg-light);
-  padding: 72px 20px;
+  padding: 64px 20px;
 }
 
 .exp-container {
@@ -1162,7 +1162,7 @@ body {
 
 #why-us {
   background-color: var(--bg-primary);
-  padding: 72px 20px;
+  padding: 64px 20px;
 }
 
 .why-container {
@@ -1241,7 +1241,7 @@ body {
 
 .why-cta {
   text-align: center;
-  margin-top: 64px;
+  margin-top: 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1257,7 +1257,7 @@ body {
 
 @media (max-width: 767px) {
   .why-cta {
-    margin-top: 48px;
+    margin-top: 36px;
   }
   .why-cta .btn-primary {
     width: 100%;
@@ -1271,7 +1271,7 @@ body {
 
 #social-proof {
   background-color: var(--bg-secondary);
-  padding: 72px 20px;
+  padding: 64px 20px;
 }
 
 .sp-container {
@@ -1414,7 +1414,7 @@ body {
 /* Social proof CTA */
 .sp-cta {
   text-align: center;
-  margin-top: 64px;
+  margin-top: 40px;
   padding: 48px 32px;
   background: rgba(255, 215, 0, 0.04);
   border: 1px solid rgba(255, 215, 0, 0.12);
@@ -1482,7 +1482,7 @@ body {
 
 @media (max-width: 767px) {
   .sp-cta {
-    margin-top: 48px;
+    margin-top: 40px;
     padding: 36px 20px;
   }
   .sp-cta-headline {
@@ -1500,7 +1500,7 @@ body {
 
 #book {
   background-color: var(--bg-primary);
-  padding: 72px 20px;
+  padding: 64px 20px;
 }
 
 .book-container {
@@ -1794,7 +1794,7 @@ body {
 
 #faq {
   background-color: var(--bg-light);
-  padding: 72px 20px;
+  padding: 64px 20px;
 }
 
 .faq-container {
@@ -1914,7 +1914,7 @@ body {
   }
 
   .faq-bottom {
-    margin-top: 64px;
+    margin-top: 48px;
   }
 }
 
@@ -2111,7 +2111,7 @@ a.footer-contact-item:hover {
 
 @media (min-width: 768px) {
   #footer {
-    padding: 80px 24px 40px;
+    padding: 64px 24px 40px;
   }
 
   .footer-grid {

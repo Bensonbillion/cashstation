@@ -182,8 +182,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let valid = true;
 
+      const email = document.getElementById('field-email');
+
       if (!name.value.trim()) { showError(name, 'This field is required'); valid = false; }
       if (!phone.value.trim()) { showError(phone, 'This field is required'); valid = false; }
+      if (!email || !email.value.trim() || !email.value.includes('@')) { showError(email, 'Please enter a valid email address'); valid = false; }
       if (!date.value) { showError(date, 'This field is required'); valid = false; }
       if (!eventType.value) { showError(eventType, 'This field is required'); valid = false; }
 
