@@ -196,19 +196,40 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.textContent = 'Sending... \u23F3';
       submitBtn.classList.add('loading');
 
-      const formData = new FormData(form);
+      const formData = new FormData();
+
+      const nameVal = document.getElementById('field-name');
+      const phoneVal = document.getElementById('field-phone');
+      const emailVal = document.getElementById('field-email');
+      const dateVal = document.getElementById('field-date');
+      const eventTypeVal = document.getElementById('field-event-type');
+      const serviceBoxes = document.querySelectorAll('#book input[type="checkbox"]:checked');
+      const guestsVal = document.getElementById('field-guests');
+
+      if (nameVal) formData.append('Full Name', nameVal.value);
+      if (phoneVal) formData.append('Phone Number', phoneVal.value);
+      if (emailVal) formData.append('Email', emailVal.value);
+      if (dateVal) formData.append('Event Date', dateVal.value);
+      if (eventTypeVal) formData.append('Event Type', eventTypeVal.value);
+
+      const services = [];
+      serviceBoxes.forEach(cb => { services.push(cb.value); });
+      formData.append('Service Interest', services.join(', ') || 'Not selected');
+
+      if (guestsVal) formData.append('Guest Count', guestsVal.value);
+
+      formData.append('_subject', 'New MyCashStation Inquiry');
 
       fetch('https://formspree.io/f/mzdkeker', {
         method: 'POST',
         body: formData,
         headers: { 'Accept': 'application/json' }
-      }).then(response => {
+      })
+      .then(response => {
         if (response.ok) {
-          // Hide form, show success
-          form.style.display = 'none';
-          successDiv.style.display = 'flex';
+          if (form) form.style.display = 'none';
+          if (successDiv) successDiv.style.display = 'flex';
 
-          // Fire confetti
           const confettiColors = ['#FFD700', '#E6B800', '#C4A265', '#0D0D0D', '#F5F2EC'];
           const confettiConfig = {
             colors: confettiColors,
@@ -231,12 +252,17 @@ document.addEventListener('DOMContentLoaded', () => {
             origin: { x: 0.8, y: 0.6 }
           }));
         } else {
-          submitBtn.textContent = 'Something went wrong. Try again.';
+          return response.json().then(() => {
+            submitBtn.textContent = 'Check Availability \u2192';
+            submitBtn.classList.remove('loading');
+            alert('Something went wrong. Please email us directly at support@mycashstation.ca');
+          });
         }
+      })
+      .catch(() => {
+        submitBtn.textContent = 'Check Availability \u2192';
         submitBtn.classList.remove('loading');
-      }).catch(() => {
-        submitBtn.textContent = 'Something went wrong. Try again.';
-        submitBtn.classList.remove('loading');
+        alert('Connection error. Please email us at support@mycashstation.ca');
       });
     });
   }
