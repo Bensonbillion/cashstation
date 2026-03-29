@@ -50,6 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fadeEls.forEach(el => fadeObserver.observe(el));
 
+  // --- Mobile bar show/hide ---
+  const mobBar = document.getElementById('mob-bar');
+  if (mobBar) {
+    const hero = document.getElementById('hero');
+    window.addEventListener('scroll', () => {
+      if (!hero) return;
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      if (heroBottom < 0) {
+        mobBar.classList.add('visible');
+      } else {
+        mobBar.classList.remove('visible');
+      }
+    });
+  }
+
   // --- Experience card preselect ---
   function preselectService(value) {
     const checkbox = document.querySelector('#book input[type="checkbox"][value="' + value + '"]');
@@ -69,6 +84,74 @@ document.addEventListener('DOMContentLoaded', () => {
   if (dateField) {
     dateField.min = new Date().toISOString().split('T')[0];
   }
+
+  // --- Multi-step form navigation ---
+  function goToStep(stepNum) {
+    const steps = [1, 2, 3];
+
+    steps.forEach(n => {
+      const el = document.getElementById('form-step-' + n);
+      if (el) {
+        el.style.display = n === stepNum ? 'block' : 'none';
+      }
+    });
+
+    const fills = { 1: '33%', 2: '66%', 3: '100%' };
+    const fill = document.getElementById('fp-fill');
+    if (fill) fill.style.width = fills[stepNum];
+
+    const labels = {
+      1: ['fp-active','',''],
+      2: ['fp-done','fp-active',''],
+      3: ['fp-done','fp-done','fp-active']
+    };
+
+    [1,2,3].forEach((n, i) => {
+      const s = document.getElementById('fp-s'+n);
+      if (!s) return;
+      s.classList.remove('fp-active','fp-done');
+      if (labels[stepNum][i]) {
+        s.classList.add(labels[stepNum][i]);
+      }
+      if (n === 1) {
+        const dot = s.querySelector('.fp-dot-inner');
+        if (dot && stepNum > 1) dot.textContent = '\u2713';
+        if (dot && stepNum === 1) dot.textContent = '1';
+      }
+      if (n === 2) {
+        const dot = s.querySelector('.fp-dot-inner');
+        if (dot && stepNum > 2) dot.textContent = '\u2713';
+        if (dot && stepNum <= 2) dot.textContent = '2';
+      }
+    });
+
+    const c1 = document.getElementById('fp-c1');
+    const c2 = document.getElementById('fp-c2');
+    if (c1) c1.classList.toggle('fp-connector--filled', stepNum > 1);
+    if (c2) c2.classList.toggle('fp-connector--filled', stepNum > 2);
+
+    const bookSection = document.getElementById('book');
+    if (bookSection) {
+      window.scrollTo({
+        top: bookSection.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  }
+
+  document.querySelectorAll('.step-next').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = parseInt(btn.dataset.next);
+      goToStep(next);
+    });
+  });
+
+  document.querySelectorAll('.step-back').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const back = parseInt(btn.dataset.back);
+      goToStep(back);
+    });
+  });
 
   // --- Form submission ---
   const submitBtn = document.getElementById('submit-btn');
