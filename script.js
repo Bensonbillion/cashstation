@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Money rain background ---
   const rainContainer = document.querySelector('.money-rain-container');
   if (rainContainer) {
-    const billCount = window.innerWidth < 768 ? 8 : 12;
+    const billCount = window.innerWidth < 768 ? 8 : 14;
     for (let i = 0; i < billCount; i++) {
       const bill = document.createElement('span');
       bill.className = 'money-bill';

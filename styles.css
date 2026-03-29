@@ -102,13 +102,13 @@ body {
 .nav-cta {
   display: inline-block;
   font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 14px;
   color: var(--bg-primary);
   background-color: var(--gold-bright);
   padding: 8px 18px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -238,13 +238,13 @@ body {
 .btn-primary {
   display: inline-block;
   font-family: 'DM Sans', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 15px;
   color: #0D0D0D;
   background-color: var(--gold-bright);
   padding: 14px 32px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
@@ -268,7 +268,7 @@ body {
 
 .btn-primary:hover {
   background-color: #E6B800;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .btn-primary:hover::after {
@@ -287,7 +287,7 @@ body {
   background: transparent;
   border: 1.5px solid var(--gold-bright);
   padding: 14px 32px;
-  border-radius: 4px;
+  border-radius: 6px;
   text-decoration: none;
   text-align: center;
   cursor: pointer;
@@ -585,11 +585,11 @@ body {
   display: inline-block;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: #0A0A0A;
   background: var(--gold-bright);
   padding: 12px 28px;
-  border-radius: 4px;
+  border-radius: 6px;
   text-decoration: none;
   letter-spacing: 0.02em;
   transition: background 0.2s ease, transform 0.2s ease;
@@ -599,7 +599,7 @@ body {
 
 .scene-cta:hover {
   background: var(--gold-mid);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 767px) {
@@ -1081,7 +1081,7 @@ body {
 
 .exp-card-cta--primary:hover {
   background-color: #E6B800;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .exp-card-cta--primary:hover::after {
@@ -1703,7 +1703,7 @@ body {
 
 #submit-btn:hover {
   background-color: #E6B800;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 #submit-btn:hover::after {
