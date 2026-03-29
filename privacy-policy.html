@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | MyCashStation</title>
+  <meta name="description" content="MyCashStation Privacy Policy — how we collect, use, and protect your personal information under Canada's PIPEDA.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #FFD700;
+      --gold-deep: #C4A265;
+      --bg: #0A0A0A;
+      --bg-card: #141414;
+      --bg-light: #F5F2EC;
+      --text: #F0EDE6;
+      --text-muted: #888880;
+      --border: rgba(255, 215, 0, 0.12);
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    .nav {
+      background: rgba(10,10,10,.95);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-icon {
+      width: 26px;
+      height: 17px;
+      border: 1.5px solid var(--gold);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-icon::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+    }
+    .nav-back {
+      font-size: 13px;
+      color: var(--gold-deep);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* PAGE */
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 32px 96px;
+    }
+
+    /* HEADER */
+    .page-eyebrow {
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      display: block;
+      margin-bottom: 16px;
+    }
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .page-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-meta strong {
+      color: var(--text);
+    }
+
+    /* CONTENT */
+    .section {
+      margin-bottom: 48px;
+    }
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .section:first-of-type h2 {
+      border-top: none;
+      padding-top: 0;
+    }
+    .section h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gold-deep);
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    .section p {
+      font-size: 15px;
+      color: #B0ACA4;
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .section p:last-child { margin-bottom: 0; }
+    .section ul, .section ol {
+      margin: 12px 0 16px 0;
+      padding-left: 20px;
+    }
+    .section li {
+      font-size: 15px;
+      color: #B0ACA4;
+      line-height: 1.8;
+      margin-bottom: 6px;
+    }
+    .section a {
+      color: var(--gold-deep);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(196,162,101,.3);
+      transition: border-color .2s, color .2s;
+    }
+    .section a:hover {
+      color: var(--gold);
+      border-color: rgba(255,215,0,.5);
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: rgba(255,215,0,.04);
+      border: 1px solid rgba(255,215,0,.15);
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+    .highlight-box p {
+      font-size: 14px;
+      color: #C0BCB4;
+      margin-bottom: 0;
+      line-height: 1.7;
+    }
+
+    /* CONTACT CARD */
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-top: 24px;
+    }
+    .contact-card p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .contact-card p:last-child { margin-bottom: 0; }
+    .contact-card strong {
+      color: var(--text);
+    }
+
+    /* TABLE */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 14px;
+    }
+    .data-table th {
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .data-table td {
+      padding: 12px 16px;
+      color: #B0ACA4;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: rgba(255,255,255,.02); }
+
+    /* FOOTER */
+    .footer {
+      background: #060606;
+      border-top: 1px solid var(--border);
+      padding: 40px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(240,237,230,.25);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: 12px;
+      color: rgba(240,237,230,.35);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .footer-links a:hover { color: var(--gold-deep); }
+
+    @media (max-width: 768px) {
+      .nav { padding: 0 20px; }
+      .page { padding: 48px 20px 72px; }
+      .page-title { font-size: 32px; }
+      .footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-icon"></div>
+    MYCASHSTATION
+  </a>
+  <a href="index.html" class="nav-back">
+    &#8592; Back to site
+  </a>
+</nav>
+
+<!-- PAGE -->
+<main class="page">
+
+  <span class="page-eyebrow">Legal</span>
+  <h1 class="page-title">Privacy Policy</h1>
+  <p class="page-meta">
+    <strong>Effective date:</strong> April 1, 2026 &nbsp;|&nbsp;
+    <strong>Last updated:</strong> April 1, 2026 &nbsp;|&nbsp;
+    <strong>Applies to:</strong> mycashstation.ca
+  </p>
+
+  <!-- 1. WHO WE ARE -->
+  <div class="section">
+    <h2>Who we are</h2>
+    <p>
+      MyCashStation is a Toronto-based event vending service operating in the Greater Toronto Area. We provide cash vending machines for weddings, parties, and cultural celebrations — dispensing custom novelty notes and real $1 USD bills for money spraying traditions.
+    </p>
+    <p>
+      This Privacy Policy explains what personal information we collect when you use our website or submit an inquiry, how we use it, who we share it with, and what rights you have under Canadian law.
+    </p>
+    <div class="highlight-box">
+      <p>
+        This policy complies with Canada's <em>Personal Information Protection and Electronic Documents Act</em> (PIPEDA), RSC 2000, c 5, and the 10 fair information principles set out in Schedule 1 of that Act.
+      </p>
+    </div>
+  </div>
+
+  <!-- 2. WHAT WE COLLECT -->
+  <div class="section">
+    <h2>What personal information we collect</h2>
+    <p>
+      We only collect information you give us directly through the inquiry form on our website. We do not run ads, install tracking cookies, or use analytics software that identifies individual visitors.
+    </p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Information</th>
+          <th>Why we ask for it</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Full name</td>
+          <td>So we know who we're corresponding with</td>
+        </tr>
+        <tr>
+          <td>Phone number</td>
+          <td>To confirm availability and send your quote</td>
+        </tr>
+        <tr>
+          <td>Email address</td>
+          <td>To send your quote and follow up on your booking</td>
+        </tr>
+        <tr>
+          <td>Event date</td>
+          <td>To check whether we're available on your date</td>
+        </tr>
+        <tr>
+          <td>Event type</td>
+          <td>To recommend the right product for your celebration</td>
+        </tr>
+        <tr>
+          <td>Service interest</td>
+          <td>Custom notes vs. real bills — helps us prepare an accurate quote</td>
+        </tr>
+        <tr>
+          <td>Estimated guest count</td>
+          <td>To size the booking correctly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      We do not collect payment card information through this website. Any payment details are handled separately through a secure payment processor at the time of booking.
+    </p>
+  </div>
+
+  <!-- 3. HOW WE USE IT -->
+  <div class="section">
+    <h2>How we use your information</h2>
+    <p>We use the information you give us for one purpose: to respond to your inquiry and, if you proceed, to book and deliver our service at your event.</p>
+    <p>More specifically, that means:</p>
+    <ul>
+      <li>Sending you a quote within 2 hours of your submission</li>
+      <li>Confirming your event date and discussing which product fits your celebration</li>
+      <li>Coordinating delivery and setup logistics before your event</li>
+      <li>Following up after your event to confirm everything went smoothly</li>
+    </ul>
+    <p>
+      We do not use your information for marketing, add you to mailing lists, or sell your data. If we want to contact you for any other reason, we will ask you first.
+    </p>
+  </div>
+
+  <!-- 4. CONSENT -->
+  <div class="section">
+    <h2>Consent</h2>
+    <p>
+      When you submit the inquiry form on our website, you consent to the collection and use of your personal information as described in this policy. The form includes a link to this Privacy Policy before you submit.
+    </p>
+    <p>
+      You can withdraw consent at any time by emailing us at <a href="mailto:support@mycashstation.ca">support@mycashstation.ca</a>. If you withdraw consent before we have delivered a service to you, we will stop processing your information and delete it. If a booking is already confirmed, we may need to retain minimal records to fulfill that contract, after which we will delete them.
+    </p>
+  </div>
+
+  <!-- 5. THIRD PARTIES -->
+  <div class="section">
+    <h2>Third parties we share data with</h2>
+    <p>
+      We use one third-party service to receive form submissions. When you submit our inquiry form, your information is transmitted to:
+    </p>
+
+    <h3>Formspree (formspree.io)</h3>
+    <p>
+      Formspree processes form submissions on our behalf and forwards them to our email inbox. Formspree is operated by Formspree Inc., based in the United States. This means your data crosses the Canadian border when you submit our form.
+    </p>
+    <p>
+      Formspree does not sell personal information and is bound by its own privacy policy, available at <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">formspree.io/legal/privacy-policy</a>. Under PIPEDA, we remain accountable for how Formspree handles information it processes on our behalf.
+    </p>
+    <p>
+      We do not share your information with any other third parties. We do not use Google Analytics, Facebook Pixel, or any advertising platform on this website.
+    </p>
+  </div>
+
+  <!-- 6. INTERNATIONAL TRANSFERS -->
+  <div class="section">
+    <h2>Transfer of data outside Canada</h2>
+    <p>
+      As noted above, Formspree operates from the United States. When you submit our inquiry form, your information is sent to and temporarily stored on Formspree's US-based servers before being forwarded to our Canadian inbox.
+    </p>
+    <p>
+      Once received in our inbox, all information is stored and processed within Canada. We do not transfer your information to any other country.
+    </p>
+    <div class="highlight-box">
+      <p>
+        Under PIPEDA, personal information transferred outside Canada for processing remains subject to the laws of the foreign jurisdiction. In the United States, that includes applicable federal privacy laws. By submitting our form, you acknowledge this transfer.
+      </p>
+    </div>
+  </div>
+
+  <!-- 7. RETENTION -->
+  <div class="section">
+    <h2>How long we keep your information</h2>
+    <p>
+      We keep inquiry information for as long as it is needed to complete the service you requested, plus a reasonable period afterward in case you contact us about a past event.
+    </p>
+    <ul>
+      <li><strong>Inquiries that did not become bookings:</strong> deleted within 6 months of your initial message</li>
+      <li><strong>Completed bookings:</strong> retained for 2 years for accounting and dispute purposes, then deleted</li>
+    </ul>
+    <p>
+      You can request deletion at any time by emailing <a href="mailto:support@mycashstation.ca">support@mycashstation.ca</a>. If we are legally required to keep certain records, we will tell you that and explain for how long.
+    </p>
+  </div>
+
+  <!-- 8. SECURITY -->
+  <div class="section">
+    <h2>How we protect your information</h2>
+    <p>
+      Your inquiry is transmitted over an encrypted HTTPS connection. Our email is hosted on Microsoft 365 via GoDaddy, which provides enterprise-grade security including two-factor authentication and encryption at rest.
+    </p>
+    <p>
+      Access to your information is limited to the MyCashStation founder. We do not have employees with access to customer data.
+    </p>
+    <p>
+      No method of electronic transmission is completely secure. If we ever become aware of a breach that poses a real risk of significant harm to you, we will notify you and the Office of the Privacy Commissioner of Canada as required under PIPEDA's breach reporting rules.
+    </p>
+  </div>
+
+  <!-- 9. YOUR RIGHTS -->
+  <div class="section">
+    <h2>Your rights under PIPEDA</h2>
+    <p>
+      PIPEDA gives you the following rights regarding your personal information:
+    </p>
+
+    <h3>Right to access</h3>
+    <p>
+      You can request a copy of the personal information we hold about you. We will respond within 30 days. If we need more time, we will tell you why and when to expect a response.
+    </p>
+
+    <h3>Right to correction</h3>
+    <p>
+      If the information we hold about you is inaccurate or incomplete, you can ask us to correct it. If we disagree with the correction, we will note your request alongside the original information.
+    </p>
+
+    <h3>Right to withdraw consent</h3>
+    <p>
+      You can withdraw consent to our use of your personal information at any time, subject to legal and contractual restrictions and reasonable notice.
+    </p>
+
+    <h3>Right to complain</h3>
+    <p>
+      If you believe we have not handled your personal information properly, you can challenge our compliance. Contact us first at <a href="mailto:support@mycashstation.ca">support@mycashstation.ca</a> — we will investigate and respond within 30 days. If you are not satisfied with our response, you can file a complaint with the Office of the Privacy Commissioner of Canada at <a href="https://www.priv.gc.ca" target="_blank" rel="noopener noreferrer">priv.gc.ca</a> or by calling 1-800-282-1376.
+    </p>
+  </div>
+
+  <!-- 10. COOKIES -->
+  <div class="section">
+    <h2>Cookies and tracking</h2>
+    <p>
+      Our website does not use cookies for tracking or advertising purposes. We do not install any analytics, advertising, or third-party tracking scripts on this website.
+    </p>
+    <p>
+      Your browser may store a session cookie to maintain basic website functionality. This cookie does not identify you, is not linked to any personal information, and is deleted when you close your browser.
+    </p>
+  </div>
+
+  <!-- 11. CHILDREN -->
+  <div class="section">
+    <h2>Children's privacy</h2>
+    <p>
+      Our service is intended for adults planning events. We do not knowingly collect personal information from anyone under 18 years of age. If you believe a minor has submitted information through our website, contact us and we will delete it promptly.
+    </p>
+  </div>
+
+  <!-- 12. CHANGES -->
+  <div class="section">
+    <h2>Changes to this policy</h2>
+    <p>
+      We may update this Privacy Policy if our practices change. When we do, we will update the date at the top of this page. Material changes will be noted in the page header for 30 days after they take effect. Your continued use of our website after a change constitutes acceptance of the updated policy.
+    </p>
+    <p>
+      We will never change this policy in a way that reduces your rights without giving you clear notice and, where required by PIPEDA, obtaining fresh consent.
+    </p>
+  </div>
+
+  <!-- 13. CONTACT -->
+  <div class="section">
+    <h2>Contact us about privacy</h2>
+    <p>
+      All privacy questions, access requests, correction requests, and complaints go to the same place. We are a small business and there is one person accountable for privacy compliance.
+    </p>
+    <div class="contact-card">
+      <p><strong>MyCashStation — Privacy Inquiries</strong></p>
+      <p>Email: <a href="mailto:support@mycashstation.ca">support@mycashstation.ca</a></p>
+      <p>Location: Greater Toronto Area, Ontario, Canada</p>
+      <p>Response time: within 5 business days for privacy requests</p>
+    </div>
+    <p style="margin-top: 24px;">
+      If you are not satisfied with our response, you may contact the Office of the Privacy Commissioner of Canada:
+    </p>
+    <div class="contact-card">
+      <p><strong>Office of the Privacy Commissioner of Canada</strong></p>
+      <p>Website: <a href="https://www.priv.gc.ca" target="_blank" rel="noopener noreferrer">priv.gc.ca</a></p>
+      <p>Phone: 1-800-282-1376 (toll-free)</p>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <span class="footer-copy">&copy; 2026 MyCashStation. All rights reserved.</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="terms-of-service.html">Terms of Service</a>
+  </div>
+</footer>
+
+</body>
+</html>
