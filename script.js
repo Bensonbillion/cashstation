@@ -196,38 +196,48 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.textContent = 'Sending... \u23F3';
       submitBtn.classList.add('loading');
 
-      setTimeout(() => {
-        // Hide form, show success
-        form.style.display = 'none';
-        successDiv.style.display = 'flex';
+      const formData = new FormData(form);
 
-        // Fire confetti
-        const confettiColors = ['#FFD700', '#E6B800', '#C4A265', '#0D0D0D', '#F5F2EC'];
-        const confettiConfig = {
-          colors: confettiColors,
-          shapes: ['square'],
-          gravity: 1.2,
-          scalar: 1.1,
-          ticks: 200
-        };
+      fetch('https://formspree.io/f/mzdkeker', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          // Hide form, show success
+          form.style.display = 'none';
+          successDiv.style.display = 'flex';
 
-        confetti(Object.assign({}, confettiConfig, {
-          particleCount: 80,
-          angle: 60,
-          spread: 55,
-          origin: { x: 0.2, y: 0.6 }
-        }));
-        confetti(Object.assign({}, confettiConfig, {
-          particleCount: 80,
-          angle: 120,
-          spread: 55,
-          origin: { x: 0.8, y: 0.6 }
-        }));
+          // Fire confetti
+          const confettiColors = ['#FFD700', '#E6B800', '#C4A265', '#0D0D0D', '#F5F2EC'];
+          const confettiConfig = {
+            colors: confettiColors,
+            shapes: ['square'],
+            gravity: 1.2,
+            scalar: 1.1,
+            ticks: 200
+          };
 
-        // Reset button for potential re-use
-        submitBtn.textContent = 'Check Availability \u2192';
+          confetti(Object.assign({}, confettiConfig, {
+            particleCount: 80,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0.2, y: 0.6 }
+          }));
+          confetti(Object.assign({}, confettiConfig, {
+            particleCount: 80,
+            angle: 120,
+            spread: 55,
+            origin: { x: 0.8, y: 0.6 }
+          }));
+        } else {
+          submitBtn.textContent = 'Something went wrong. Try again.';
+        }
         submitBtn.classList.remove('loading');
-      }, 1200);
+      }).catch(() => {
+        submitBtn.textContent = 'Something went wrong. Try again.';
+        submitBtn.classList.remove('loading');
+      });
     });
   }
 
