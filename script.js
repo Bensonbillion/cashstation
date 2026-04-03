@@ -1,4 +1,59 @@
 /* =========================================
+   Cookie Consent
+   ========================================= */
+
+(function() {
+  var CONSENT_KEY = 'mcs_cookie_consent';
+  var GA_ID = 'G-RFF5F4QF88';
+
+  var banner = document.getElementById('cookie-banner');
+  var acceptBtn = document.getElementById('cookie-accept');
+  var declineBtn = document.getElementById('cookie-decline');
+
+  var consent = localStorage.getItem(CONSENT_KEY);
+
+  if (consent === 'accepted') {
+    enableAnalytics();
+  } else if (consent === 'declined') {
+    disableAnalytics();
+  } else {
+    setTimeout(function() {
+      if (banner) banner.style.display = 'block';
+    }, 2000);
+  }
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', function() {
+      localStorage.setItem(CONSENT_KEY, 'accepted');
+      if (banner) banner.style.display = 'none';
+      enableAnalytics();
+    });
+  }
+
+  if (declineBtn) {
+    declineBtn.addEventListener('click', function() {
+      localStorage.setItem(CONSENT_KEY, 'declined');
+      if (banner) banner.style.display = 'none';
+      disableAnalytics();
+    });
+  }
+
+  function enableAnalytics() {
+    window['ga-disable-' + GA_ID] = false;
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+  }
+
+  function disableAnalytics() {
+    window['ga-disable-' + GA_ID] = true;
+    if (typeof gtag === 'function') {
+      gtag('consent', 'update', { analytics_storage: 'denied' });
+    }
+  }
+})();
+
+/* =========================================
    MyCashStation — Main Script
    ========================================= */
 
