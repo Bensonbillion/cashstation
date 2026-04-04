@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /og-image.html
-Sitemap: https://mycashstation.ca/sitemap.xml
