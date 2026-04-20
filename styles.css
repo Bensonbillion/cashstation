@@ -247,7 +247,6 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 32px;
   width: 100%;
 }
 
@@ -1208,8 +1207,8 @@ body::before {
 
 .why-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
 .why-icon-wrap {
@@ -2532,6 +2531,9 @@ a.footer-contact-item:hover {
 .eyebrow {
   color: rgba(240,237,230,0.55) !important;
   letter-spacing: 0.22em;
+}
+#hero .eyebrow {
+  color: var(--gold-bright) !important;
 }
 
 /* Light section eyebrows need darker contrast */
