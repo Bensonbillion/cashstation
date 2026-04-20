@@ -360,3 +360,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+/* =========================================
+   Hero Machine Parallax (desktop only)
+   ========================================= */
+
+(function() {
+  var machine = document.querySelector('.hero-machine-img');
+  if (!machine) return;
+  if (window.innerWidth < 768) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var ticking = false;
+
+  function update() {
+    var y = window.scrollY;
+    if (y > 800) { ticking = false; return; }
+    var parallax = y * 0.12;
+    var tilt = Math.min(y * 0.006, 2);
+    machine.style.transform = 'translateY(' + parallax + 'px) rotate(' + tilt + 'deg)';
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  });
+})();
