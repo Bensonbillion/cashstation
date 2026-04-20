@@ -2418,3 +2418,86 @@ a.footer-contact-item:hover {
     text-align: center;
   }
 }
+
+/* =========================================
+   Contrast Bug Fixes
+   ========================================= */
+
+/* Fix A: Scene block dark contrast */
+.what-is-scene {
+  background-color: #141414 !important;
+  border-radius: 12px;
+  padding: 28px 32px;
+  border-left: 4px solid #FFD700;
+  margin-top: 36px;
+}
+.scene-headline {
+  color: #FFD700 !important;
+}
+.scene-body {
+  color: #C8C4BC !important;
+}
+.scene-cta {
+  background-color: #FFD700 !important;
+  color: #0A0A0A !important;
+  text-decoration: none !important;
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Fix B: HIW bottom CTA visibility */
+.hiw-bottom-text {
+  color: #C8C4BC !important;
+  opacity: 1 !important;
+}
+.hiw-bottom-cta .btn-primary {
+  background-color: #FFD700 !important;
+  color: #0A0A0A !important;
+  opacity: 1 !important;
+}
+
+/* Fix C: Ask us link visibility */
+.exp-ask-link {
+  color: #C4A265 !important;
+  text-decoration: underline !important;
+  font-weight: 600;
+}
+
+/* Fix D: Card 2 outline CTA contrast */
+.exp-card--bills .exp-card-cta,
+.exp-card-cta--outline {
+  border: 2px solid #C4A265 !important;
+  color: #1A1A1A !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+}
+.exp-card--bills .exp-card-cta:hover,
+.exp-card-cta--outline:hover {
+  background: rgba(196,162,101,0.08) !important;
+  color: #0A0A0A !important;
+}
+
+/* Fix E: Why-us icon backgrounds */
+.why-icon-wrap {
+  background-color: rgba(255,215,0,0.1) !important;
+  border: 1px solid rgba(255,215,0,0.25) !important;
+}
+
+/* Fix F: Trust bar stacking at 900px */
+@media (max-width: 900px) {
+  .trust-bar-inner {
+    flex-direction: column !important;
+    gap: 24px !important;
+    padding: 0 20px !important;
+  }
+  .tb-divider {
+    display: none !important;
+  }
+  .tb-item {
+    max-width: 100% !important;
+    padding: 0 !important;
+    text-align: center !important;
+  }
+}
