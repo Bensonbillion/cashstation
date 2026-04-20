@@ -2512,3 +2512,44 @@ a.footer-contact-item:hover {
     text-align: center !important;
   }
 }
+
+/* =========================================
+   Gold Restraint — cream for overused gold
+   ========================================= */
+
+/* Eyebrow text to cream (keep gold bar above) */
+.eyebrow {
+  color: rgba(240,237,230,0.55) !important;
+  letter-spacing: 0.22em;
+}
+
+/* Light section eyebrows need darker contrast */
+#what-is .eyebrow,
+#experiences .eyebrow,
+#faq .eyebrow {
+  color: rgba(26,26,26,0.5) !important;
+}
+
+/* Why Us icon strokes to cream */
+.why-icon-wrap svg {
+  stroke: #F0EDE6 !important;
+}
+
+/* How It Works icon strokes to cream */
+.hiw-step-icon svg {
+  stroke: #F0EDE6 !important;
+}
+
+/* Section dividers thinner and subtle */
+.section-divider {
+  height: 1px !important;
+  opacity: 0.25 !important;
+}
+
+/* Footer secondary links cream */
+.footer-nav a:not(.footer-nav-highlight) {
+  color: rgba(240,237,230,0.55);
+}
+.footer-nav a:not(.footer-nav-highlight):hover {
+  color: #FFD700;
+}
