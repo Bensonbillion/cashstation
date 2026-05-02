@@ -32,9 +32,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-
   <link rel="stylesheet" href="styles.css">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFF5F4QF88"></script>
@@ -482,75 +479,85 @@
   </section>
 
   <section id="book">
-    <div class="container book-container">
+    <div class="book-inner">
+
       <div class="book-header fade-in-up">
         <div class="eyebrow-row">
           <div class="ey-line"></div>
           <div class="ey-text">Book your consultation</div>
         </div>
-        <h2 class="book-h2">Let's make your event <em>unforgettable.</em></h2>
-        <p class="book-sub">Tell us about your event and pick a time for a quick 15-minute call. We'll confirm availability and send your custom quote the same day.</p>
+        <h2 class="section-h">Tell us about your <em>event first.</em></h2>
+        <p class="book-sub">Fill in your details below and we will take you straight to pick a time for your 15-minute consultation call.</p>
       </div>
 
-      <div class="qual-cards fade-in-up">
-        <label class="qual-card" for="qual-event-type">
-          <span class="qual-icon">&#127882;</span>
-          <span class="qual-label">Event Type</span>
-          <input type="text" id="qual-event-type" class="qual-input" placeholder="Tell us your event e.g. Wedding, Birthday...">
-        </label>
-        <label class="qual-card" for="qual-event-date">
-          <span class="qual-icon">&#128197;</span>
-          <span class="qual-label">Event Date</span>
-          <input type="date" id="qual-event-date" class="qual-input qual-input--date">
-        </label>
-        <div class="qual-card qual-card--checks">
-          <span class="qual-icon">&#10024;</span>
-          <span class="qual-label">I'm interested in...</span>
-          <label class="qual-check">
-            <input type="checkbox" id="qual-service-custom" value="Custom Novelty Notes">
-            <span class="qual-check-box"></span>
-            <span class="qual-check-label">Custom novelty notes</span>
-          </label>
-          <label class="qual-check">
-            <input type="checkbox" id="qual-service-real" value="Real $1 USD Bills">
-            <span class="qual-check-box"></span>
-            <span class="qual-check-label">Real $1 USD bills</span>
-          </label>
-        </div>
+      <div class="book-trust fade-in-up">
+        <div class="bt-item"><div class="bt-tick">&#10003;</div>Free consultation</div>
+        <div class="bt-item"><div class="bt-tick">&#10003;</div>No commitment</div>
+        <div class="bt-item"><div class="bt-tick">&#10003;</div>Quote same day</div>
+        <div class="bt-item"><div class="bt-tick">&#10003;</div>Fully insured</div>
       </div>
 
-      <div class="qual-guests fade-in-up">
-        <label for="qual-guests" class="qual-guests-label">Estimated guest count</label>
-        <input type="text" id="qual-guests" class="qual-guests-input" placeholder="Roughly how many guests are you expecting?">
-      </div>
+      <form id="booking-form" class="fade-in-up" novalidate>
+        <div class="book-grid">
 
-      <div class="cal-container fade-in-up">
-        <div class="cal-head">
-          <div class="cal-head-left">
-            <div class="cal-icon-box">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect x="3" y="5" width="18" height="16" rx="2" stroke="#FFD700" stroke-width="1.6"/>
-                <line x1="3" y1="10" x2="21" y2="10" stroke="#FFD700" stroke-width="1.6"/>
-                <line x1="8" y1="3" x2="8" y2="7" stroke="#FFD700" stroke-width="1.6" stroke-linecap="round"/>
-                <line x1="16" y1="3" x2="16" y2="7" stroke="#FFD700" stroke-width="1.6" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div class="cal-head-text">
-              <strong>MyCashStation Event Consultation</strong>
-              <span>15 minutes. Benson Egemonye. Phone or video</span>
+          <div class="book-field">
+            <label for="b-name">Full Name</label>
+            <input type="text" id="b-name" name="name" placeholder="Your full name" required autocomplete="name">
+          </div>
+
+          <div class="book-field">
+            <label for="b-phone">Phone Number</label>
+            <input type="tel" id="b-phone" name="phone" placeholder="+1 (416) 000-0000" required autocomplete="tel">
+          </div>
+
+          <div class="book-field">
+            <label for="b-email">Email Address</label>
+            <input type="email" id="b-email" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+
+          <div class="book-field">
+            <label for="b-date">Event Date</label>
+            <input type="date" id="b-date" name="event_date" required>
+            <span class="field-hint">Not sure yet? Give us your best estimate.</span>
+          </div>
+
+          <div class="book-field book-field--full">
+            <label for="b-event">Tell us about your event</label>
+            <input type="text" id="b-event" name="event_type" placeholder="e.g. Nigerian wedding, Caribbean birthday, Arab celebration..." required>
+            <span class="field-hint">Be as specific as you like. No dropdown, your event, your words.</span>
+          </div>
+
+          <div class="book-field book-field--full">
+            <label>I am interested in...</label>
+            <div class="book-checkboxes">
+              <label class="book-check">
+                <input type="checkbox" name="service" value="Custom Novelty Notes">
+                <span class="check-box"></span>
+                <span class="check-label">Custom novelty notes (faces printed on notes)</span>
+              </label>
+              <label class="book-check">
+                <input type="checkbox" name="service" value="Real $1 USD Bills">
+                <span class="check-box"></span>
+                <span class="check-label">Real $1 USD bill spraying</span>
+              </label>
             </div>
           </div>
-          <span class="cal-head-pill">15 min call</span>
-        </div>
-        <div class="calendly-inline-widget" data-url="https://calendly.com/bensonegemonye/mycashstation-event-consultation?hide_gdpr_banner=1&primary_color=FF6B35" style="min-width:320px;height:700px"></div>
-      </div>
 
-      <div class="trust-strip fade-in-up">
-        <span class="ts-pill"><span class="ts-tick">&#10003;</span>Free consultation</span>
-        <span class="ts-pill"><span class="ts-tick">&#10003;</span>No commitment</span>
-        <span class="ts-pill"><span class="ts-tick">&#10003;</span>Quote same day</span>
-        <span class="ts-pill"><span class="ts-tick">&#10003;</span>Fully insured</span>
-      </div>
+          <div class="book-field book-field--full">
+            <label for="b-guests">Estimated Guest Count</label>
+            <input type="text" id="b-guests" name="guest_count" placeholder="Roughly how many guests are you expecting?">
+          </div>
+
+        </div>
+
+        <button type="submit" class="book-submit" id="book-submit-btn">
+          Continue to pick a time
+          <span class="book-submit-arr">&rsaquo;</span>
+        </button>
+
+        <p class="book-consent">By continuing you agree to our <a href="privacy-policy.html">Privacy Policy</a></p>
+      </form>
+
     </div>
   </section>
 

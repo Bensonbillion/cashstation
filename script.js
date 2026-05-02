@@ -158,26 +158,70 @@ document.addEventListener('DOMContentLoaded', () => {
     firstAnswer.style.maxHeight = firstAnswer.scrollHeight + 'px';
   }
 
-  // Booking qualifier card filled state
-  const qualInputs = document.querySelectorAll('.qual-card .qual-input');
-  qualInputs.forEach(input => {
-    const card = input.closest('.qual-card');
-    const updateFilled = () => {
-      if (input.value && input.value.trim()) {
-        card.classList.add('is-filled');
-      } else {
-        card.classList.remove('is-filled');
-      }
-    };
-    input.addEventListener('input', updateFilled);
-    input.addEventListener('change', updateFilled);
-  });
-
   // Set min date to today on the booking date input
-  const dateInput = document.getElementById('qual-event-date');
+  const dateInput = document.getElementById('b-date');
   if (dateInput) {
     dateInput.min = new Date().toISOString().split('T')[0];
   }
+
+  /*
+    IMPORTANT — Calendly setup:
+    In your Calendly event settings for
+    mycashstation-event-consultation,
+    go to Invitee Questions and add
+    one custom question:
+    Label: "Event Details"
+    Type: Multiple lines
+    Required: No
+    This field will be pre-filled
+    with all form data automatically.
+  */
+
+  // Booking form: collect details, redirect to Calendly with prefill
+  document.getElementById('booking-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('b-name')?.value.trim() || '';
+    const phone = document.getElementById('b-phone')?.value.trim() || '';
+    const email = document.getElementById('b-email')?.value.trim() || '';
+    const date = document.getElementById('b-date')?.value || '';
+    const event = document.getElementById('b-event')?.value.trim() || '';
+    const guests = document.getElementById('b-guests')?.value.trim() || '';
+
+    const services = Array.from(
+      document.querySelectorAll('input[name="service"]:checked')
+    ).map(cb => cb.value).join(', ') || 'Not specified';
+
+    const notes = [
+      'Name: ' + name,
+      'Phone: ' + phone,
+      'Email: ' + email,
+      'Event: ' + event,
+      'Date: ' + date,
+      'Guests: ' + guests,
+      'Service: ' + services
+    ].join('\n');
+
+    const btn = document.getElementById('book-submit-btn');
+    if (btn) {
+      btn.textContent = 'Taking you to pick a time...';
+      btn.disabled = true;
+    }
+
+    const calendlyBase = 'https://calendly.com/bensonegemonye/mycashstation-event-consultation';
+
+    const params = new URLSearchParams({
+      name: name,
+      email: email,
+      a1: notes,
+      hide_gdpr_banner: '1',
+      primary_color: 'FF6B35'
+    });
+
+    setTimeout(function() {
+      window.location.href = calendlyBase + '?' + params.toString();
+    }, 800);
+  });
 
 });
 
