@@ -831,7 +831,7 @@ p { margin: 0; }
   line-height: 1.12;
 }
 .machine-proof-strip {
-  margin-bottom: 36px;
+  margin-bottom: 56px;
   text-align: center;
 }
 .mps-label {
@@ -884,71 +884,6 @@ p { margin: 0; }
 @media (max-width: 768px) {
   .mps-photo-wrap { width: 140px; height: 170px; }
 }
-
-.sp-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-bottom: 56px;
-}
-.sp-card {
-  position: relative;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-card);
-  padding: 26px 22px;
-  box-shadow: 0 2px 16px rgba(0,0,0,.04);
-  transition: transform .25s var(--ease-out), box-shadow .25s;
-}
-.sp-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 14px 36px rgba(10,10,10,.08);
-}
-.sp-quote-mark {
-  position: absolute;
-  top: 8px;
-  right: 18px;
-  font-family: var(--font-display);
-  font-size: 64px;
-  color: var(--orange);
-  opacity: .35;
-  line-height: 1;
-}
-.sp-stars {
-  color: var(--gold);
-  font-size: 13px;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
-}
-.sp-quote {
-  font-family: var(--font-body);
-  font-size: 12px;
-  color: var(--text-mid);
-  line-height: 1.7;
-  margin-bottom: 22px;
-}
-.sp-quote em { font-style: italic; }
-.sp-person {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.sp-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--orange), var(--gold));
-  color: #fff;
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.sp-meta { display: flex; flex-direction: column; gap: 1px; line-height: 1.3; }
-.sp-meta strong { font-size: 12px; font-weight: 700; color: var(--black); }
-.sp-meta span { font-size: 10px; color: var(--text-soft); }
 
 .sp-cta-box {
   background: #fff;
@@ -1565,9 +1500,7 @@ p { margin: 0; }
   .what-visual { order: -1; height: 280px; }
   .hiw-grid { grid-template-columns: 1fr; gap: 16px; }
   .exp-grid { grid-template-columns: 1fr; }
-  .sp-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; gap: 20px; }
-  .qual-cards { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
 }
 
