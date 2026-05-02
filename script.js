@@ -186,8 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
    ========================================= */
 
 (function() {
-  var card = document.querySelector('.machine-card');
-  if (!card) return;
+  var img = document.querySelector('.hero-machine-img');
+  if (!img) return;
   if (window.innerWidth < 768) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (y > 800) { ticking = false; return; }
     var parallax = y * 0.08;
     var tilt = Math.min(y * 0.005, 1.6);
-    card.style.transform = 'translateY(' + parallax + 'px) rotate(' + tilt + 'deg)';
+    img.style.transform = 'translateY(' + parallax + 'px) rotate(' + tilt + 'deg)';
     ticking = false;
   }
 
