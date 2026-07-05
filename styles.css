@@ -313,6 +313,7 @@ p { margin: 0; }
   max-width: 340px;
   height: auto;
   object-fit: contain;
+  border-radius: 20px;
   filter: drop-shadow(0 -16px 48px rgba(255, 107, 53, 0.2));
   animation: machineFloat 6s ease-in-out infinite;
 }
@@ -524,7 +525,7 @@ p { margin: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 100% 100%;
+  object-position: center;
   transition: transform .6s ease;
 }
 .what-visual:hover .what-photo { transform: scale(1.03); }
@@ -858,6 +859,20 @@ p { margin: 0; }
   gap: 12px;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: flex-start;
+}
+.mps-item {
+  margin: 0;
+}
+.mps-caption {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-soft);
+  text-align: center;
+  max-width: 160px;
+  margin-inline: auto;
+  line-height: 1.4;
 }
 .mps-photo-wrap {
   width: 160px;

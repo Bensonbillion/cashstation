@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /*
-    IMPORTANT — Calendly setup:
+    IMPORTANT: Calendly setup.
     In your Calendly event settings for
     mycashstation-event-consultation,
     go to Invitee Questions and add
